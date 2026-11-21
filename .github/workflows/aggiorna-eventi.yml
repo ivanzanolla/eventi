@@ -1,0 +1,48 @@
+name: Aggiorna eventi
+
+on:
+  schedule:
+    - cron: "17 4 * * *"   # ogni giorno alle 05:17 (ora italiana d'inverno)
+  workflow_dispatch: {}     # avvio manuale da Actions → "Run workflow"
+  push:
+    paths: ["scraper/**", ".github/workflows/aggiorna-eventi.yml"]
+
+permissions:
+  contents: write
+
+concurrency:
+  group: aggiorna-eventi
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Dipendenze
+        run: pip install -r requirements.txt
+
+      - name: Test parser
+        run: python scraper/tests/test_parsers.py
+
+      - name: Scarica eventi
+        run: python scraper/fetch_events.py --out data/events.json
+
+      - name: Commit se cambiato
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/events.json
+          if git diff --cached --quiet; then
+            echo "Nessuna novità"
+          else
+            git commit -m "Eventi aggiornati $(TZ=Europe/Rome date +'%Y-%m-%d %H:%M')"
+            git push
+          fi

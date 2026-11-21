@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#f6f3ee" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#16140f" media="(prefers-color-scheme: dark)">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Eventi">
+<title>Eventi culturali · Veneto</title>
+<style>
+:root{
+  --bg:#f6f3ee; --card:#fffdf9; --ink:#1d1b17; --muted:#6f685c; --line:#e4ddd0;
+  --accent:#8a3b12; --accent-soft:#f3e2d6; --hl:#b8860b; --hl-soft:#fbf1d3;
+  --c-classica:#7a2e5a; --c-mostre:#1f5f8b; --c-visite:#3d6b2f; --c-concerti:#6f685c;
+}
+@media (prefers-color-scheme: dark){:root{
+  --bg:#16140f; --card:#211e18; --ink:#efe9de; --muted:#a49b8b; --line:#36312a;
+  --accent:#e08a5a; --accent-soft:#3a2619; --hl:#e6b84a; --hl-soft:#3a3018;
+  --c-classica:#d58fb7; --c-mostre:#7fb6de; --c-visite:#9ccc85; --c-concerti:#a49b8b;
+}}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font:16px/1.4 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+  padding:0 0 env(safe-area-inset-bottom)}
+a{color:inherit}
+header{padding:calc(14px + env(safe-area-inset-top)) 16px 6px}
+h1{font:600 22px/1.2 ui-serif,Georgia,serif;margin:0}
+.sub{color:var(--muted);font-size:13px;margin-top:2px}
+.bar{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--bg) 92%,transparent);
+  backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);padding:8px 16px 10px;border-bottom:1px solid var(--line)}
+.row{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;padding:3px 0}
+.row::-webkit-scrollbar{display:none}
+.chip{flex:none;border:1px solid var(--line);background:var(--card);color:var(--muted);
+  border-radius:999px;padding:6px 11px;font-size:14px;cursor:pointer;user-select:none}
+.chip[aria-pressed=true]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.seg{display:flex;background:var(--line);border-radius:10px;padding:2px;margin:4px 0}
+.seg button{flex:1;border:0;background:transparent;color:var(--muted);padding:7px;border-radius:8px;font-size:15px}
+.seg button[aria-pressed=true]{background:var(--card);color:var(--ink);font-weight:600;box-shadow:0 1px 2px #0002}
+.tools{display:flex;gap:6px;margin-top:4px}
+.tools input,.tools select{font-size:16px;border:1px solid var(--line);background:var(--card);color:var(--ink);
+  border-radius:9px;padding:7px 10px;min-width:0}
+.tools input{flex:1}
+main{padding:4px 12px 40px;max-width:760px;margin:0 auto}
+.day{font:600 13px/1 -apple-system,sans-serif;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);
+  margin:20px 4px 8px;display:flex;gap:8px;align-items:baseline}
+.day .rel{color:var(--accent);text-transform:none;letter-spacing:0;font-weight:600}
+.ev{display:block;text-decoration:none;background:var(--card);border:1px solid var(--line);border-radius:12px;
+  padding:10px 12px;margin:0 0 8px;border-left:4px solid var(--c, var(--line))}
+.ev.hl{background:var(--hl-soft);border-color:var(--hl);border-left-color:var(--hl)}
+.ev .t{font-weight:600;font-size:16px;line-height:1.3}
+.ev .m{color:var(--muted);font-size:13.5px;margin-top:3px;display:flex;flex-wrap:wrap;gap:2px 10px}
+.ev .time{font-variant-numeric:tabular-nums;color:var(--ink);font-weight:600}
+.tag{font-size:11.5px;font-weight:600;color:var(--c);text-transform:uppercase;letter-spacing:.04em}
+.star{color:var(--hl)}
+.pin{margin:14px 0 4px}
+.pin h2,.foot h2{font-size:13px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin:0 4px 8px}
+.empty{color:var(--muted);text-align:center;padding:40px 10px}
+.foot{margin-top:30px;font-size:13.5px;color:var(--muted)}
+.foot ul{list-style:none;padding:0 4px;margin:0 0 16px}
+.foot li{padding:3px 0}
+.ok{color:var(--c-visite)} .ko{color:#c0392b}
+.more{display:block;width:100%;margin:6px 0 0;padding:10px;border:1px dashed var(--line);border-radius:10px;
+  background:transparent;color:var(--muted);font-size:14px}
+</style>
+</head>
+<body>
+<header>
+  <h1>Eventi culturali</h1>
+  <div class="sub" id="sub">Caricamento…</div>
+</header>
+
+<div class="bar">
+  <div class="seg" role="group" aria-label="Vista">
+    <button data-view="cal" aria-pressed="true">Calendario</button>
+    <button data-view="mostre" aria-pressed="false">Mostre in corso</button>
+  </div>
+  <div class="row" id="cats"></div>
+  <div class="row" id="provs"></div>
+  <div class="tools">
+    <input id="q" type="search" placeholder="Cerca titolo, luogo, autore…" autocomplete="off">
+    <select id="span" aria-label="Periodo">
+      <option value="7">7 giorni</option>
+      <option value="30" selected>30 giorni</option>
+      <option value="90">3 mesi</option>
+      <option value="9999">Tutto</option>
+    </select>
+  </div>
+</div>
+
+<main>
+  <section class="pin" id="pin" hidden></section>
+  <div id="list"></div>
+  <section class="foot" id="foot"></section>
+</main>
+
+<script>
+const CATS = [
+  ["classica","Classica e sacra","--c-classica"],
+  ["mostre","Mostre","--c-mostre"],
+  ["visite","Visite guidate","--c-visite"],
+  ["concerti","Altri concerti","--c-concerti"],
+];
+const PROVS = [
+  ["BL","Belluno"],["TV","Treviso"],["VE","Venezia"],["PN","Pordenone"],
+  ["VEN","Resto del Veneto"],["FVG","Resto del FVG"],
+];
+const VENETO_ALTRO = new Set(["PD","VI","VR","RO","VEN"]);
+const FVG_ALTRO = new Set(["UD","GO","TS","FVG"]);
+const DEF = {view:"cal", cats:["classica","mostre","visite"], provs:["BL","TV","VE","PN"], span:"30", q:""};
+const LONG_DAYS = 6;   // un evento più lungo di così è una "mostra in corso", non sta nel calendario
+
+let st = load(), DATA = null, shown = 60;
+
+function load(){ try{ return {...DEF, ...JSON.parse(localStorage.getItem("eventi-filtri")||"{}"), q:""} }catch{ return {...DEF} } }
+function save(){ try{ localStorage.setItem("eventi-filtri", JSON.stringify({...st, q:""})) }catch{} }
+
+const $ = s => document.querySelector(s);
+const esc = s => String(s??"").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const pd = s => { const [y,m,d] = s.split("-").map(Number); return new Date(y, m-1, d) };
+const iso = d => `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,"0")}-${String(d.getDate()).padStart(2,"0")}`;
+const days = (a,b) => Math.round((pd(b)-pd(a))/864e5);
+const fmtDay = s => pd(s).toLocaleDateString("it-IT",{weekday:"long", day:"numeric", month:"long"});
+const fmtShort = s => pd(s).toLocaleDateString("it-IT",{day:"numeric", month:"short"});
+
+function provGroup(p){ if(!p) return "VEN"; if(VENETO_ALTRO.has(p)) return "VEN"; if(FVG_ALTRO.has(p)) return "FVG"; return p }
+function isLong(e){ return e.end && days(e.start, e.end) > LONG_DAYS }
+
+function chips(el, items, key){
+  el.innerHTML = items.map(([v,l,c]) =>
+    `<button class="chip" data-v="${v}" aria-pressed="${st[key].includes(v)}" ${c?`style="--c:var(${c})"`:""}>${l}</button>`).join("");
+  el.onclick = ev => {
+    const b = ev.target.closest(".chip"); if(!b) return;
+    const v = b.dataset.v, cur = new Set(st[key]);
+    cur.has(v) ? cur.delete(v) : cur.add(v);
+    st[key] = [...cur]; b.setAttribute("aria-pressed", cur.has(v)); shown = 60; save(); render();
+  };
+}
+
+function match(e, today){
+  if(!st.cats.includes(e.cat) && !e.hl) return false;
+  if(!st.provs.includes(provGroup(e.prov)) && !e.hl) return false;
+  if(st.q){
+    const hay = `${e.title} ${e.venue||""} ${e.town||""} ${e.src}`.toLowerCase();
+    if(!st.q.toLowerCase().split(/\s+/).every(w => hay.includes(w))) return false;
+  }
+  return (e.end || e.start) >= today;
+}
+
+function card(e){
+  const cat = CATS.find(c => c[0]===e.cat) || CATS[3];
+  const where = [e.venue, e.town && (e.prov && e.prov.length===2 ? `${e.town} (${e.prov})` : e.town)]
+                  .filter(Boolean).filter((v,i,a) => a.indexOf(v)===i);
+  if(!e.town && e.prov) where.push(PROVS.find(p=>p[0]===e.prov)?.[1] || e.prov);
+  const bits = [];
+  if(e.time) bits.push(`<span class="time">${esc(e.time)}</span>`);
+  if(where.length) bits.push(esc(where.join(", ")));
+  if(e.end) bits.push(`fino al ${fmtShort(e.end)}`);
+  if(e.more) bits.push(`+${e.more} ${e.more>1?"date":"data"}`);
+  if(e.price) bits.push(esc(e.price));
+  return `<a class="ev${e.hl?" hl":""}" style="--c:var(${cat[2]})" href="${esc(e.url)}" target="_blank" rel="noopener">
+    <div class="tag">${e.hl?'<span class="star">★ Crystal Tears · </span>':""}${cat[1]}</div>
+    <div class="t">${esc(e.title)}</div>
+    <div class="m">${bits.map(b=>`<span>${b}</span>`).join("")}<span>${esc(e.src)}</span></div></a>`;
+}
+
+function relLabel(s, today){
+  const n = days(today, s);
+  if(n===0) return "oggi"; if(n===1) return "domani";
+  const dow = pd(s).getDay();
+  if(n<7 && (dow===6 || dow===0)) return "questo weekend";
+  return "";
+}
+
+function render(){
+  if(!DATA) return;
+  document.querySelectorAll(".seg button").forEach(b => b.setAttribute("aria-pressed", b.dataset.view===st.view));
+  $("#span").value = st.span;
+  $("#span").style.display = st.view==="cal" ? "" : "none";
+  const today = iso(new Date());
+  const limit = iso(new Date(Date.now() + Number(st.span)*864e5));
+  const evs = DATA.events.filter(e => match(e, today));
+
+  // Crystal Tears sempre in cima, a prescindere dai filtri
+  const hl = DATA.events.filter(e => e.hl && (e.end||e.start) >= today);
+  $("#pin").hidden = !hl.length;
+  $("#pin").innerHTML = hl.length ? `<h2>★ Crystal Tears</h2>` + hl.map(e => card({...e, title:`${fmtDay(e.start)} · ${e.title}`})).join("") : "";
+
+  let html = "";
+  if(st.view === "mostre"){
+    const ms = evs.filter(e => e.cat==="mostre" || isLong(e)).filter(e => !e.hl)
+                  .sort((a,b) => (a.end||a.start).localeCompare(b.end||b.start));
+    const now = ms.filter(e => e.start <= today), next = ms.filter(e => e.start > today)
+                  .sort((a,b) => a.start.localeCompare(b.start));
+    if(now.length) html += `<div class="day">In corso <span class="rel">· per data di chiusura</span></div>` + now.map(card).join("");
+    if(next.length) html += `<div class="day">In arrivo</div>` + next.map(e => card({...e, venue:`dal ${fmtShort(e.start)}` + (e.venue?` · ${e.venue}`:"")})).join("");
+    if(!ms.length) html = `<div class="empty">Nessuna mostra con questi filtri.</div>`;
+  } else {
+    const cal = evs.filter(e => !isLong(e) && !e.hl).map(e => e.start < today ? {...e, start:today} : e)
+                   .filter(e => e.start <= limit);
+    const slice = cal.slice(0, shown);
+    let last = "";
+    for(const e of slice){
+      if(e.start !== last){
+        last = e.start;
+        const r = relLabel(e.start, today);
+        html += `<div class="day">${fmtDay(e.start)}${r?`<span class="rel">${r}</span>`:""}</div>`;
+      }
+      html += card(e);
+    }
+    if(cal.length > shown) html += `<button class="more" id="more">Mostra altri ${cal.length-shown}</button>`;
+    if(!cal.length) html = `<div class="empty">Niente in calendario con questi filtri.<br>Prova ad allargare periodo o province.</div>`;
+  }
+  $("#list").innerHTML = html;
+  const m = $("#more"); if(m) m.onclick = () => { shown += 80; render() };
+}
+
+function foot(){
+  const s = DATA.sources.map(x => `<li><span class="${x.ok?"ok":"ko"}">${x.ok?"●":"✕"}</span>
+      <a href="${esc(x.url)}" target="_blank" rel="noopener">${esc(x.name)}</a> — ${x.ok?`${x.count} eventi`:`errore: ${esc(x.error)}`}</li>`).join("");
+  const l = (DATA.links||[]).map(x => `<li>↗ <a href="${esc(x.url)}" target="_blank" rel="noopener">${esc(x.name)}</a></li>`).join("");
+  $("#foot").innerHTML = `<h2>Fonti</h2><ul>${s}</ul><h2>Da controllare a mano</h2><ul>${l}</ul>`;
+}
+
+document.querySelector(".seg").onclick = ev => {
+  const b = ev.target.closest("button"); if(!b) return;
+  st.view = b.dataset.view; shown = 60; save(); render(); scrollTo(0,0);
+};
+$("#span").onchange = e => { st.span = e.target.value; shown = 60; save(); render() };
+$("#q").oninput = e => { st.q = e.target.value.trim(); shown = 60; render() };
+chips($("#cats"), CATS, "cats");
+chips($("#provs"), PROVS, "provs");
+
+fetch("data/events.json?" + Date.now()).then(r => r.json()).then(d => {
+  DATA = d;
+  const g = new Date(d.generated);
+  const bad = d.sources.filter(s => !s.ok).length;
+  $("#sub").textContent = `Aggiornato ${g.toLocaleDateString("it-IT",{day:"numeric",month:"short"})} alle ${g.toLocaleTimeString("it-IT",{hour:"2-digit",minute:"2-digit"})} · ${d.events.length} eventi` + (bad?` · ${bad} ${bad>1?"fonti":"fonte"} in errore`:"");
+  render(); foot();
+}).catch(err => { $("#sub").textContent = "Dati non disponibili: " + err.message });
+</script>
+</body>
+</html>

@@ -1,0 +1,110 @@
+"""Test dei parser su estratti reali delle fonti (novembre 2026).
+
+python -m pytest scraper/tests  oppure  python scraper/tests/test_parsers.py
+"""
+import json
+import sys
+from datetime import date
+from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+import fetch_events as fe  # noqa: E402
+from classify import CLASSICA, CONCERTI, MOSTRE, VISITE, classify  # noqa: E402
+from towns import province_of  # noqa: E402
+
+FX = Path(__file__).parent / "fixtures"
+REF = date(2026, 11, 21)
+
+
+def test_classify():
+    assert classify("37^ Rassegna di Musica Sacra \"Don Sergio Manfroi\"") == CLASSICA
+    assert classify("Concerto Corale") == CLASSICA
+    assert classify("Messa Solenne di  Santa Cecilia - Coro Parrocchiale San Giacomo") == CLASSICA
+    assert classify("Gran concerto dell’Epifania") == CLASSICA
+    assert classify("Velvet Dress – U2 Tribute Band") is None
+    assert classify("Innuendo Experience – The Ultimate Queen Celebration", "", "musica") == CONCERTI
+    assert classify("Chris Jones e Paolo Ercoli in Concerto") == CONCERTI
+    assert classify("Rassegna Antologica") == MOSTRE
+    assert classify("Scacchi: scopri e sfida") is None
+    assert classify("A Ceremony of Carols") == CLASSICA
+    assert classify("Concerto di Natale", "il Gruppo Vocale Crystal Tears presenta") == CLASSICA
+    assert classify("Ciaspolata al chiaro di luna", "", "visite_natura") is None
+    assert classify("Visita guidata al Museo Diocesano", "", "visite_natura") == VISITE
+    assert classify("Michelangelo Da Caravaggio - A Rebel Rock Musical") is None
+
+
+def test_towns():
+    assert province_of("Cortina d'Ampezzo") == "BL"
+    assert province_of("Conegliano") == "TV"
+    assert province_of("Mestre") == "VE"
+    assert province_of("Trieste, Muggia") == "TS"
+    assert province_of("Sacile") == "PN"
+    assert province_of("Paesino Ignoto", "BL") == "BL"
+
+
+def test_visitdolomitibellunesi():
+    payload = json.loads((FX / "vdb.json").read_text())
+    evs = fe.parse_visitdolomitibellunesi(payload, REF)
+    titles = {e.title: e for e in evs}
+    assert "Cut to Cortina!" not in titles                    # non culturale
+    assert titles["Rassegna Antologica"].cat == MOSTRE
+    assert titles["Rassegna Antologica"].prov == "BL"
+    cc = [e for e in evs if e.title == "Concerto Corale"]
+    assert len(cc) == 2 and cc[0].start == "2026-11-28" and cc[0].more == 1
+    assert cc[0].url.endswith("?day=2026-11-28")
+
+
+def test_dolomitiprealpi():
+    events = json.loads((FX / "prealpi.json").read_text())
+    evs = fe.parse_dolomitiprealpi(events, REF)
+    ct = [e for e in evs if e.hl]
+    assert len(ct) == 1 and ct[0].cat == CLASSICA and ct[0].prov == "BL" and ct[0].time == "20:30"
+    assert not any(e.title.startswith("Scacchi") for e in evs)
+
+
+def test_venetosegreto():
+    evs = fe.parse_venetosegreto((FX / "venetosegreto.html").read_text(), REF)
+    assert len(evs) == 2
+    v = evs[0]
+    assert v.cat == VISITE and v.prov == "VI" and v.start == "2026-11-22" and v.more == 1
+    assert v.price == "16€" and v.venue == "Ville venete"
+
+
+def test_tacco():
+    evs = fe.parse_tacco((FX / "tacco.html").read_text(), CLASSICA, REF)
+    assert [e.title for e in evs] == ["Concerto di Natale", "Vespri in Cattedrale con Dennis Barezzani e Su Yu"]
+    assert evs[0].prov == "VE" and evs[0].venue == "Palazzetto Bru Zane"
+    assert evs[1].prov == "VR"
+
+
+def test_fenice():
+    evs = fe.parse_fenice((FX / "fenice.html").read_text(), REF)
+    assert [(e.start, e.time, e.title) for e in evs] == [
+        ("2026-11-27", "19:00", "Fedora"),
+        ("2027-01-01", "11:15", "Concerto di Capodanno 2027"),
+    ]
+
+
+def test_turismofvg():
+    evs = fe.parse_turismofvg((FX / "turismofvg.html").read_text(), "Musica", REF)
+    assert [(e.title, e.town, e.prov, e.time) for e in evs] == [
+        ("FEMART - Festival MusicAntica e Arti - APPUNTI DI VIAGGIO Baroque Stories - Opposte traiettorie. "
+         "Gli archi tra Venezia e la Mitteleuropa", "Udine", "UD", "18:00"),
+    ]
+    mostre = fe.parse_turismofvg((FX / "turismofvg.html").read_text(), "Mostre", REF)
+    assert [(m.title, m.prov, m.start) for m in mostre] == [("Dialogo fra Linee ed Emozioni", "UD", "2026-11-21")]
+
+
+def test_dedupe_merges_highlight():
+    a = fe.Event(title="A Ceremony of Carols", cat=CLASSICA, start="2026-12-21", url="u1", src="VDB",
+                 town="Belluno", venue="Chiesa di Sargnano")
+    b = fe.Event(title="A Ceremony of Carols", cat=CLASSICA, start="2026-12-21", url="u2", src="Prealpi", hl=True)
+    out = fe.dedupe([a, b])
+    assert len(out) == 1 and out[0].hl and out[0].venue == "Chiesa di Sargnano"
+
+
+if __name__ == "__main__":
+    for name, fn in list(globals().items()):
+        if name.startswith("test_"):
+            fn()
+            print("ok", name)
