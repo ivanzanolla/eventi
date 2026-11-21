@@ -98,6 +98,15 @@ def test_turismofvg():
     assert [(m.title, m.prov, m.start) for m in mostre] == [("Dialogo fra Linee ed Emozioni", "UD", "2026-11-21")]
 
 
+def test_belcircolo():
+    evs = fe.parse_belcircolo((FX / "belcircolo.html").read_text(), REF)
+    assert [(e.title, e.start, e.time, e.town, e.venue, e.prov) for e in evs] == [
+        ("Trio Mythos", "2026-12-05", "17:30", "Belluno", "Auditorium Comunale", "BL"),
+        ("LEONARDO MABILIA pianoforte", "2027-01-10", "10:30", "Belluno", "Palazzo Crepadona", "BL"),
+    ]
+    assert evs[0].price.startswith("Interi € 20")
+
+
 def test_dedupe_merges_highlight():
     a = fe.Event(title="A Ceremony of Carols", cat=CLASSICA, start="2026-12-21", url="u1", src="VDB",
                  town="Belluno", venue="Chiesa di Sargnano")

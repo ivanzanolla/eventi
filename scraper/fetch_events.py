@@ -383,12 +383,53 @@ def fetch_turismofvg(http: Http, ref: date) -> list[Event]:
     return out
 
 
+BELCIRCOLO_CATS = ("classica", "matinee-musicali", "luglio-al-borgo")
+
+
+def parse_belcircolo(page_html: str, ref: date) -> list[Event]:
+    """Card della stagione del Circolo Culturale Bellunese:
+    'SABATO 5 DICEMBRE 2026 – ore 17:30 Belluno, Auditorium Comunale Biglietti: ...'"""
+    soup = BeautifulSoup(page_html, "html.parser")
+    out = []
+    for a in soup.select("article"):
+        link = a.select_one(".entry-title a")
+        body = a.select_one(".entry-content")
+        if not link or not body:
+            continue
+        text = clean(body.get_text(" "))
+        d = parse_it_date(text)
+        if not d or d < ref:
+            continue
+        hhmm = re.search(r"ore\s+(\d{1,2})[:.](\d{2})", text)
+        place = re.search(r"ore\s+\d{1,2}[:.]\d{2}\s+(.+?)(?:\s+-\s+mappa|\s+Biglietti|\s+\(altro|$)", text)
+        price = re.search(r"Biglietti:\s*(.+?)(?:\s+\(altro|$)", text)
+        town, venue = None, None
+        if place:
+            town, _, venue = place.group(1).partition(",")
+        img = a.select_one("img")
+        out.append(Event(title=clean(link.get_text()).title() if link.get_text().isupper() else clean(link.get_text()),
+                         cat=CLASSICA, start=d.isoformat(),
+                         time=f"{int(hhmm.group(1)):02d}:{hhmm.group(2)}" if hhmm else None,
+                         venue=clean(venue) or None, town=clean(town) or "Belluno",
+                         prov=province_of(clean(town), "BL"), url=link["href"], src="Circolo Culturale Bellunese",
+                         img=img.get("src") if img else None, price=price.group(1).strip() if price else None))
+    return out
+
+
+def fetch_belcircolo(http: Http, ref: date) -> list[Event]:
+    out = []
+    for cat in BELCIRCOLO_CATS:
+        out += parse_belcircolo(http.get(f"https://belcircolo.org/category/{cat}/").text, ref)
+    return out
+
+
 SOURCES = [
     ("Visit Dolomiti Bellunesi", "https://www.visitdolomitibellunesi.com/it/eventi/calendario-eventi", fetch_visitdolomitibellunesi),
     ("Dolomiti Prealpi", "https://www.dolomitiprealpi.it/eventi/", fetch_dolomitiprealpi),
     ("Veneto Segreto", "https://venetosegreto.com/eventi/", fetch_venetosegreto),
     ("il Tacco di Bacco", "https://iltaccodibacco.it/veneto/", fetch_tacco),
     ("Teatro La Fenice", "https://www.teatrolafenice.it/calendario/", fetch_fenice),
+    ("Circolo Culturale Bellunese", "https://belcircolo.org/programma/", fetch_belcircolo),
     ("Turismo FVG", "https://www.turismofvg.it/eventi/musica", fetch_turismofvg),
 ]
 

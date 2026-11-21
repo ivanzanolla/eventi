@@ -17,6 +17,7 @@ Gruppo Vocale **Crystal Tears** sono sempre in cima, qualunque filtro sia attivo
 | Veneto Segreto | visite guidate in tutto il Veneto | API REST del sito |
 | il Tacco di Bacco | classica/lirica e mostre (Veneto, Venezia, Treviso, Belluno, Pordenone) | dati strutturati schema.org |
 | Teatro La Fenice | opera e concerti a Venezia | pagina calendario |
+| Circolo Culturale Bellunese | stagione concertistica di Belluno | pagine categoria (Classica, Matinée, Luglio al Borgo) |
 | Turismo FVG | musica classica e mostre in Friuli | pagine elenco |
 
 Fonti senza dati scaricabili, linkate in fondo alla pagina: TrevisoToday (blocca i client automatici),
