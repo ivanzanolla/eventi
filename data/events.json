@@ -1,17 +1,17 @@
 {
-"generated": "2026-11-21T18:16+01:00",
+"generated": "2026-11-21T18:22+01:00",
 "sources": [
 {
 "name": "Visit Dolomiti Bellunesi",
 "url": "https://www.visitdolomitibellunesi.com/it/eventi/calendario-eventi",
 "ok": true,
-"count": 45
+"count": 40
 },
 {
 "name": "Dolomiti Prealpi",
 "url": "https://www.dolomitiprealpi.it/eventi/",
 "ok": true,
-"count": 18
+"count": 23
 },
 {
 "name": "Veneto Segreto",
@@ -64,7 +64,7 @@
 "town": "Treviso",
 "prov": "TV",
 "img": "https://iltaccodibacco.it/img_eventi/2026/09/328483_20260829_132739.jpg",
-"id": "98968696e5"
+"id": "f5c7b5f037"
 },
 {
 "title": "Klimt, Schiele, Kokoschka e il corpo nell’arte contemporanea",
@@ -77,7 +77,7 @@
 "town": "Mestre",
 "prov": "VE",
 "img": "https://iltaccodibacco.it/img_eventi/2026/09/331461_20260925_164151.jpg",
-"id": "ab41b5d3df"
+"id": "72c89615ce"
 },
 {
 "title": "Per filo, per segno. Dall'ingegno di Luciano Savio ai manifesti del '900",
@@ -295,7 +295,7 @@
 "src": "Turismo FVG",
 "town": "Pasian di Prato",
 "prov": "FVG",
-"id": "5edf105ebe"
+"id": "9e9482752b"
 },
 {
 "title": "Delegazione FAI Trieste - Atelier d' Artista 2026",
@@ -360,7 +360,7 @@
 "prov": "PD",
 "img": "https://mio.venetosegreto.com/storage/events/thumbs/fcb4ee0afa649dc1f5202212d0c0b3ce.webp",
 "price": "16€",
-"id": "c981fb11a3"
+"id": "77c881f73b"
 },
 {
 "title": "Messa Solenne di Santa Cecilia - Coro Parrocchiale San Giacomo",
@@ -499,16 +499,6 @@
 "prov": "BL",
 "img": "https://www.visitdolomitibellunesi.com/imports/images/event/voci-spezzate-voci-salvate-l-opera-lirica-incontra-l-impegno-civile-1a780090-f028-4b50-a2de-98fdcf24e3b8/123808/image-thumb__123808__thumb500/images-trn-1-76daddc6-21a2-492d-82af-bc0fd66554f1-99-image.jpg",
 "id": "ffbd86ada3"
-},
-{
-"title": "Voci Spezzate, Voci Salvate: l’opera lirica incontra l’impegno civile",
-"cat": "classica",
-"start": "2026-11-21",
-"url": "https://www.dolomitiprealpi.it/event/voci-spezzate-voci-salvate-lopera-lirica-incontra-limpegno-civile/",
-"src": "Dolomiti Prealpi",
-"town": "Venezia",
-"prov": "VE",
-"id": "7a9d56afc7"
 },
 {
 "title": "Fedora",
@@ -733,19 +723,6 @@
 "id": "4624cb0017"
 },
 {
-"title": "Laboratorio per bambini",
-"cat": "classica",
-"start": "2026-11-25",
-"url": "https://www.visitdolomitibellunesi.com/it/eventi/laboratorio-per-bambini?day=2026-11-25",
-"src": "Visit Dolomiti Bellunesi",
-"venue": "Sala Consiliare Municipio",
-"town": "Canale d'Agordo",
-"prov": "BL",
-"img": "https://www.visitdolomitibellunesi.com/imports/images/event/laboratorio-per-bambini-618a7668-15cb-4bdf-8205-0eae232a6d64/123118/image-thumb__123118__thumb500/images-trn-1-ec5aa074-d156-48a3-843f-b2faf2238b6b-99-image.jpg",
-"more": 2,
-"id": "5f78e113fe"
-},
-{
 "title": "Musica d'autunno – concerto degli studenti e dei docenti",
 "cat": "classica",
 "start": "2026-11-27",
@@ -759,7 +736,7 @@
 },
 {
 "title": "“Note di rinascita della piccola Fenice”",
-"cat": "concerti",
+"cat": "classica",
 "start": "2026-11-27",
 "url": "https://www.visitdolomitibellunesi.com/it/eventi/note-di-rinascita-della-piccola-fenice",
 "src": "Visit Dolomiti Bellunesi",
@@ -989,7 +966,7 @@
 "prov": "RO",
 "img": "https://mio.venetosegreto.com/storage/events/thumbs/a9100801b09098d108fe909f5d592728.webp",
 "price": "15€",
-"id": "d38accfd23"
+"id": "824ede77dd"
 },
 {
 "title": "Il magico castello di Zumelle in Valbelluna - speciale Natale",
@@ -1104,7 +1081,7 @@
 },
 {
 "title": "Saverio Tasca Vibes Trio",
-"cat": "classica",
+"cat": "concerti",
 "start": "2026-12-02",
 "url": "https://www.teatrolafenice.it/event/saverio-tasca-vibes-trio/",
 "src": "Teatro La Fenice",
@@ -1113,18 +1090,6 @@
 "town": "Venezia",
 "prov": "VE",
 "id": "7c70e7fcc7"
-},
-{
-"title": "Laboratorio per bambini",
-"cat": "classica",
-"start": "2026-12-02",
-"url": "https://www.visitdolomitibellunesi.com/it/eventi/laboratorio-per-bambini?day=2026-12-02",
-"src": "Visit Dolomiti Bellunesi",
-"venue": "Sala Consiliare Municipio",
-"town": "Canale d'Agordo",
-"prov": "BL",
-"img": "https://www.visitdolomitibellunesi.com/imports/images/event/laboratorio-per-bambini-618a7668-15cb-4bdf-8205-0eae232a6d64/123118/image-thumb__123118__thumb500/images-trn-1-ec5aa074-d156-48a3-843f-b2faf2238b6b-99-image.jpg",
-"id": "8950d42f3a"
 },
 {
 "title": "György Kurtág compie 100 anni!",
@@ -1186,7 +1151,7 @@
 "town": "Rovigo",
 "prov": "RO",
 "img": "https://iltaccodibacco.it/img_eventi/2026/12/330947_20260921_161430.jpg",
-"id": "150e2b560b"
+"id": "d498f7025e"
 },
 {
 "title": "Concerto diretto da Alevtina Ioffe",
@@ -1259,7 +1224,7 @@
 "prov": "RO",
 "img": "https://mio.venetosegreto.com/storage/events/thumbs/ceaa8d2501884ac9b301f0a35496cf50.webp",
 "price": "15€",
-"id": "98587b1f09"
+"id": "e509a09091"
 },
 {
 "title": "Trio Mythos",
@@ -1283,7 +1248,7 @@
 "prov": "PD",
 "img": "https://mio.venetosegreto.com/storage/events/thumbs/44da4daa4e3cfe7848811954a0dbb98a.webp",
 "price": "15€",
-"id": "650c1bf5e0"
+"id": "1e6c83fd10"
 },
 {
 "title": "Vespri in Cattedrale con Vita Gombač, Michele Donatoni e Schola Gregoriana",
@@ -1378,7 +1343,7 @@
 "prov": "PD",
 "img": "https://mio.venetosegreto.com/storage/events/thumbs/ea9ccb0c6c9edb56080e4ecea531c82a.webp",
 "price": "15€",
-"id": "35f6f33fd9"
+"id": "561a1153f1"
 },
 {
 "title": "Natura e storia tra Piave e Montello (TV)",
@@ -1488,18 +1453,6 @@
 "img": "https://mio.venetosegreto.com/storage/events/thumbs/b9d79d546e16ca399b174273d5a74495.webp",
 "price": "19€",
 "id": "2f096758d6"
-},
-{
-"title": "Laboratorio per bambini",
-"cat": "classica",
-"start": "2026-12-09",
-"url": "https://www.visitdolomitibellunesi.com/it/eventi/laboratorio-per-bambini?day=2026-12-09",
-"src": "Visit Dolomiti Bellunesi",
-"venue": "Sala Consiliare Municipio",
-"town": "Canale d'Agordo",
-"prov": "BL",
-"img": "https://www.visitdolomitibellunesi.com/imports/images/event/laboratorio-per-bambini-618a7668-15cb-4bdf-8205-0eae232a6d64/123118/image-thumb__123118__thumb500/images-trn-1-ec5aa074-d156-48a3-843f-b2faf2238b6b-99-image.jpg",
-"id": "cdf02ae31b"
 },
 {
 "title": "Concerto di Natale",
@@ -1644,7 +1597,7 @@
 "prov": "PD",
 "img": "https://mio.venetosegreto.com/storage/events/thumbs/e7205bcb7259504410874b3389501c80.webp",
 "price": "17€",
-"id": "aec4ad7311"
+"id": "ce5220a594"
 },
 {
 "title": "SECRET TOUR®: Castello di Thiene",
@@ -1854,18 +1807,6 @@
 "id": "6fbb7b2924"
 },
 {
-"title": "Il magico laboratorio degli Elfi",
-"cat": "classica",
-"start": "2026-12-19",
-"url": "https://www.visitdolomitibellunesi.com/it/eventi/il-magico-laboratorio-degli-elfi?day=2026-12-19",
-"src": "Visit Dolomiti Bellunesi",
-"venue": "sede Soccorso Alpino Piazza Municipio",
-"town": "Falcade",
-"prov": "BL",
-"img": "https://www.visitdolomitibellunesi.com/imports/images/event/il-magico-laboratorio-degli-elfi-eb46dd60-6b18-4e2c-8f2f-538bce58d72f/123580/image-thumb__123580__thumb500/images-trn-1-0c158f19-9c64-4028-ae8c-0599bf7d1bf7-99-image.jpg",
-"id": "11a6a35857"
-},
-{
 "title": "La Padova delle origini: un viaggio nella storia, da Prato della Valle a Santa Giustina",
 "cat": "visite",
 "start": "2026-12-19",
@@ -1948,6 +1889,16 @@
 "img": "https://mio.venetosegreto.com/storage/events/thumbs/6bdeb04d91c5ebced4c2d7aa73847627.webp",
 "price": "16€",
 "id": "95ffd25fbf"
+},
+{
+"title": "“Note di rinascita della piccola Fenice”",
+"cat": "classica",
+"start": "2026-12-22",
+"url": "https://www.dolomitiprealpi.it/event/note-di-rinascita-della-piccola-fenice-3/",
+"src": "Dolomiti Prealpi",
+"town": "Feltre",
+"prov": "BL",
+"id": "44b18f6aa3"
 },
 {
 "title": "Dicembre al museo",
@@ -2112,16 +2063,14 @@
 "id": "610645590c"
 },
 {
-"title": "La Befana vien di notte - laboratorio per bambini",
+"title": "“Note di rinascita della piccola Fenice”",
 "cat": "classica",
-"start": "2027-01-02",
-"url": "https://www.visitdolomitibellunesi.com/it/eventi/la-befana-vien-di-notte-laboratorio-per-bambini?day=2027-01-02",
-"src": "Visit Dolomiti Bellunesi",
-"venue": "sede Soccorso Alpino Piazza Municipio",
-"town": "Falcade",
+"start": "2027-01-01",
+"url": "https://www.dolomitiprealpi.it/event/note-di-rinascita-della-piccola-fenice-4/",
+"src": "Dolomiti Prealpi",
+"town": "Feltre",
 "prov": "BL",
-"img": "https://www.visitdolomitibellunesi.com/imports/images/event/la-befana-vien-di-notte-laboratorio-per-bambini-5f8d6437-15b8-4faf-ac02-14d0ff42e228/123625/image-thumb__123625__thumb500/images-trn-1-67641ce0-2335-49e6-9540-6483e922205e-99-image.jpg",
-"id": "8015392f49"
+"id": "50c3ead26d"
 },
 {
 "title": "Concerto Coro Val di Zoldo bambini e giovani",
@@ -2145,7 +2094,7 @@
 "town": "Belluno",
 "prov": "BL",
 "img": "https://www.visitdolomitibellunesi.com/imports/images/event/gran-concerto-dell-epifania-9ee36efa-dcc5-472d-83ec-ece7c4559c21/123355/image-thumb__123355__thumb500/images-trn-1-6d80bfad-8bc0-435b-bafc-60b4de1c5679-99-image.jpg",
-"id": "73c72958a2"
+"id": "11c308c3ab"
 },
 {
 "title": "Danzando per la vita - Gala Internazionale di Danza",
@@ -2368,7 +2317,7 @@
 },
 {
 "title": "Vespri in Cattedrale – Incontro musicale",
-"cat": "concerti",
+"cat": "classica",
 "start": "2027-02-06",
 "url": "https://iltaccodibacco.it/veneto/eventi/337342.html",
 "src": "il Tacco di Bacco",
@@ -2406,7 +2355,7 @@
 },
 {
 "title": "Vespri in Cattedrale – Incontro musicale",
-"cat": "concerti",
+"cat": "classica",
 "start": "2027-02-13",
 "url": "https://iltaccodibacco.it/veneto/eventi/337343.html",
 "src": "il Tacco di Bacco",
@@ -2430,6 +2379,16 @@
 "id": "865b540da4"
 },
 {
+"title": "“Note di rinascita della piccola Fenice”",
+"cat": "classica",
+"start": "2027-02-15",
+"url": "https://www.dolomitiprealpi.it/event/note-di-rinascita-della-piccola-fenice-5/",
+"src": "Dolomiti Prealpi",
+"town": "Feltre",
+"prov": "BL",
+"id": "84da270a1c"
+},
+{
 "title": "Hänsel und Gretel",
 "cat": "classica",
 "start": "2027-02-19",
@@ -2444,7 +2403,7 @@
 },
 {
 "title": "Vespri in Cattedrale – Incontro musicale",
-"cat": "concerti",
+"cat": "classica",
 "start": "2027-02-20",
 "url": "https://iltaccodibacco.it/veneto/eventi/337344.html",
 "src": "il Tacco di Bacco",
