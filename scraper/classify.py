@@ -16,7 +16,7 @@ _CLASSICA_RE = re.compile(
     r"musica\s+(sacra|classica|antica|barocca|da\s+camera|corale|lirica|sinfonica)"
     r"|\bcor[oi]\b|\bcorale\b|\bcorali\b|vocal\s+group|gruppo\s+vocale|ensemble\s+vocale|voci\s+bianche"
     r"|\bcappella\s+(musicale|marciana)|\borchestra|\bsinfoni|filarmonic|\borgan[oi]\b|organistic"
-    r"|requiem|\bmessa\s+(solenne|cantata|in\s)|\bvespri\b|oratorio|\bcantata\b|stabat\s+mater|magnificat"
+    r"|requiem|\bmessa\s+(solenne|cantata|in\s)|\bvespri\b|\boratorio\b|\bcantata\b|stabat\s+mater|magnificat"
     r"|\bliric[ao]\b|\bopera\s+(lirica|buffa|seria)\b|quartetto|quintetto|\btrio\b|\bduo\b|pianofort|pianist|violin|violoncell"
     r"|clavicembal|\barpa\b|musica\s*antica|barocc|baroque|\barchi\b|madrigal|rinasciment|polifoni"
     r"|clarinett|\bflaut|\boboe|cornamus|\bviol[ae]\s+da\s+gamba|liuto"
@@ -29,7 +29,7 @@ _CLASSICA_RE = re.compile(
 
 # Segnali di musica non classica: prevalgono sui generici "concerto"/"musica"
 _NON_CLASSICA_RE = re.compile(
-    r"tribut|tribute|\bband\b|\brock\b|\bpop\b|jazz|blues|\bdj\b|\brap\b|metal|swing|musical|\bcover"
+    r"tribut|tribute|\bband\b|\brock\b|\bpop\b|jazz|blues|\bdj\b|\brap\b|metal|swing|\bmusical\b|\bcover|\bvibes\b"
     r"|bluegrass|country|reggae|karaoke|cugini\s+di\s+campagna|disco|gospel|folk|cantautor|hip\s*hop"
     r"|elettronic|techno|liscio|tango|sanremo|queen|vasco|pink\s+floyd|u2\b|morricone|film\s+history"
     r"|hollywood|buena\s+vista|beatles|candlelight",

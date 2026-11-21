@@ -25,7 +25,7 @@ import requests
 from bs4 import BeautifulSoup
 
 sys.path.insert(0, str(Path(__file__).parent))
-from classify import CLASSICA, CONCERTI, MOSTRE, VISITE, classify, is_highlight  # noqa: E402
+from classify import CLASSICA, CONCERTI, MOSTRE, VISITE, _NON_CLASSICA_RE, classify, is_highlight  # noqa: E402
 from towns import PROVINCE_NAMES, norm, province_of  # noqa: E402
 
 TZ = ZoneInfo("Europe/Rome")
@@ -170,7 +170,7 @@ def parse_dolomitiprealpi(events: list[dict], ref: date) -> list[Event]:
         if cat not in (CLASSICA, MOSTRE, VISITE) and not is_highlight(desc):
             continue
         venue = e.get("venue") if isinstance(e.get("venue"), dict) else {}
-        town = clean(venue.get("city")) or _town_from_text(desc)
+        town = clean(venue.get("city")) or _town_from_text(desc, "BL")
         hhmm = None if e.get("all_day") else (e.get("start_date") or "")[11:16] or None
         out.append(Event(title=title, cat=cat, start=start, end=end, time=hhmm if hhmm != "00:00" else None,
                          venue=clean(venue.get("venue")) or None, town=town, prov=province_of(town, "BL"),
@@ -180,12 +180,13 @@ def parse_dolomitiprealpi(events: list[dict], ref: date) -> list[Event]:
     return out
 
 
-def _town_from_text(text: str) -> str | None:
+def _town_from_text(text: str, prov: str) -> str | None:
+    """Primo comune della provincia citato nel testo (Dolomiti Prealpi non dà il luogo)."""
     from towns import TOWN_TO_PROV
     t = norm(text)
     best = None
-    for town in TOWN_TO_PROV:
-        if len(town) > 4 and re.search(rf"\b{re.escape(town)}\b", t):
+    for town, p in TOWN_TO_PROV.items():
+        if p == prov and len(town) > 4 and re.search(rf"\b{re.escape(town)}\b", t):
             if best is None or t.index(town) < t.index(best):
                 best = town
     return best.title() if best else None
@@ -273,7 +274,7 @@ def parse_tacco(page_html: str, hint: str, ref: date) -> list[Event]:
             town = clean(addr.get("addressLocality")) or city or None
             desc = clean(e.get("description"))
             cat = classify(title, desc, hint)
-            if hint == CLASSICA and re.search(r"musical|tribut|\bpop\b|rock", title, re.I):
+            if hint == CLASSICA and re.search(r"\bmusical\b|tribut|\bpop\b|\brock\b", title, re.I):
                 cat = CONCERTI
             img = e.get("image")
             out.append(Event(title=title, cat=cat, start=start, end=end,
@@ -318,7 +319,9 @@ def parse_fenice(page_html: str, ref: date) -> list[Event]:
             place = clean(it.select_one(".place").get_text()) if it.select_one(".place") else "Teatro La Fenice"
             t = it.select_one(".time")
             img = it.select_one("img")
-            out.append(Event(title=clean(title_el.get_text()), cat=CLASSICA, start=day.isoformat(),
+            title = clean(title_el.get_text())
+            cat = CONCERTI if classify(title) in (CONCERTI, None) and _NON_CLASSICA_RE.search(title) else CLASSICA
+            out.append(Event(title=title, cat=cat, start=day.isoformat(),
                              time=clean(t.get_text()) if t else None, venue=place, town="Venezia",
                              prov="VE", url=link["href"], src="Teatro La Fenice",
                              img=img.get("src") if img else None))

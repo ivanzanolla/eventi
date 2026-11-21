@@ -76,8 +76,8 @@ PROVINCE_NAMES = {
 
 
 def norm(s: str) -> str:
-    s = unicodedata.normalize("NFKD", s or "").encode("ascii", "ignore").decode()
-    s = s.lower().replace("’", "'")
+    s = (s or "").replace("’", "'").replace("‘", "'")
+    s = unicodedata.normalize("NFKD", s).encode("ascii", "ignore").decode().lower()
     s = re.sub(r"[^a-z0-9' -]", " ", s)
     return re.sub(r"\s+", " ", s).strip()
 

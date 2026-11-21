@@ -30,6 +30,9 @@ def test_classify():
     assert classify("Concerto di Natale", "il Gruppo Vocale Crystal Tears presenta") == CLASSICA
     assert classify("Ciaspolata al chiaro di luna", "", "visite_natura") is None
     assert classify("Visita guidata al Museo Diocesano", "", "visite_natura") == VISITE
+    assert classify("Laboratorio per bambini") is None
+    assert classify("Saverio Tasca Vibes Trio") is None
+    assert classify("Vespri in Cattedrale – Incontro musicale") == CLASSICA
     assert classify("Michelangelo Da Caravaggio - A Rebel Rock Musical") is None
 
 
@@ -101,6 +104,9 @@ def test_dedupe_merges_highlight():
     b = fe.Event(title="A Ceremony of Carols", cat=CLASSICA, start="2026-12-21", url="u2", src="Prealpi", hl=True)
     out = fe.dedupe([a, b])
     assert len(out) == 1 and out[0].hl and out[0].venue == "Chiesa di Sargnano"
+    c = fe.Event(title="Voci Spezzate, Voci Salvate: l'opera lirica", cat=CLASSICA, start="2026-11-21", url="a", src="x")
+    d = fe.Event(title="Voci Spezzate, Voci Salvate: l’opera lirica", cat=CLASSICA, start="2026-11-21", url="b", src="y")
+    assert len(fe.dedupe([c, d])) == 1
 
 
 if __name__ == "__main__":
