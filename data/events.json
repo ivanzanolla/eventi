@@ -1,5 +1,5 @@
 {
-"generated": "2026-11-21T18:22+01:00",
+"generated": "2026-11-21T18:28+01:00",
 "sources": [
 {
 "name": "Visit Dolomiti Bellunesi",
@@ -30,6 +30,12 @@
 "url": "https://www.teatrolafenice.it/calendario/",
 "ok": true,
 "count": 93
+},
+{
+"name": "Circolo Culturale Bellunese",
+"url": "https://belcircolo.org/programma/",
+"ok": true,
+"count": 3
 },
 {
 "name": "Turismo FVG",
@@ -1167,6 +1173,20 @@
 "id": "fae162f86f"
 },
 {
+"title": "Trio Mythos",
+"cat": "classica",
+"start": "2026-12-05",
+"url": "https://belcircolo.org/trio-mythos-3/",
+"src": "Circolo Culturale Bellunese",
+"time": "17:30",
+"venue": "Auditorium Comunale",
+"town": "Belluno",
+"prov": "BL",
+"img": "https://belcircolo.org/wp-content/uploads/2025/07/Trio_Mythos-BN-600x400.jpg",
+"price": "Interi € 20; Soci € 15; Studenti € 5.",
+"id": "5b3a75a6a8"
+},
+{
 "title": "Baby Alpaca Experience",
 "cat": "visite",
 "start": "2026-12-05",
@@ -1225,18 +1245,6 @@
 "img": "https://mio.venetosegreto.com/storage/events/thumbs/ceaa8d2501884ac9b301f0a35496cf50.webp",
 "price": "15€",
 "id": "e509a09091"
-},
-{
-"title": "Trio Mythos",
-"cat": "classica",
-"start": "2026-12-05",
-"url": "https://www.visitdolomitibellunesi.com/it/eventi/trio-mythos-1?day=2026-12-05",
-"src": "Visit Dolomiti Bellunesi",
-"venue": "Auditorium Comunale",
-"town": "Belluno",
-"prov": "BL",
-"img": "https://www.visitdolomitibellunesi.com/imports/images/event/trio-mythos-1a1fe0b2-30e7-4449-8037-2ba1414e307f/123322/image-thumb__123322__thumb500/images-trn-1-548bcd55-852f-4b29-bd6c-a458a55da750-99-image.jpg",
-"id": "fe03964931"
 },
 {
 "title": "VILLA BEATRICE D’ESTE: VIAGGIO ALLA SCOPERTA DEI COLLI EUGANEI (PD)",
@@ -2123,6 +2131,20 @@
 "id": "d0f71c592d"
 },
 {
+"title": "LEONARDO MABILIA pianoforte",
+"cat": "classica",
+"start": "2027-01-10",
+"url": "https://belcircolo.org/leonardo-mabilia-pianoforte/",
+"src": "Circolo Culturale Bellunese",
+"time": "10:30",
+"venue": "Auditorium Comunale",
+"town": "Belluno",
+"prov": "BL",
+"img": "https://belcircolo.org/wp-content/uploads/2026/11/MABILIA2-910x1024-1-600x400.jpg",
+"price": "Interi € 15; Soci € 10; Studenti € 5.",
+"id": "dddb491b9c"
+},
+{
 "title": "Concerto del Coro del Teatro La Fenice",
 "cat": "classica",
 "start": "2027-01-10",
@@ -2134,6 +2156,20 @@
 "prov": "VE",
 "img": "https://www.teatrolafenice.it/wp-content/uploads/2026/06/Screenshot-2026-06-04-alle-12.59.26-scaled.png",
 "id": "892ab232a5"
+},
+{
+"title": "Domenico NORDIO Roberto PLANO",
+"cat": "classica",
+"start": "2027-01-16",
+"url": "https://belcircolo.org/domenico-nordio-roberto-piano/",
+"src": "Circolo Culturale Bellunese",
+"time": "20:30",
+"venue": "Auditorium Comunale – mappa",
+"town": "Belluno",
+"prov": "BL",
+"img": "https://belcircolo.org/wp-content/uploads/2026/11/il-duo-violino-pianoforte-domenico-nordio-e-roberto-plano-al-teatro-alighieri--600x394.jpg",
+"price": "Interi € 20; Soci € 15; Studenti € 5.",
+"id": "7f3e2fd50c"
 },
 {
 "title": "Piccolo Orso e la Montagna di ghiaccio",
