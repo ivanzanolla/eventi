@@ -1,35 +1,35 @@
 {
-"generated": "2026-11-21T18:28+01:00",
+"generated": "2026-11-22T13:38+01:00",
 "sources": [
 {
 "name": "Visit Dolomiti Bellunesi",
 "url": "https://www.visitdolomitibellunesi.com/it/eventi/calendario-eventi",
 "ok": true,
-"count": 40
+"count": 37
 },
 {
 "name": "Dolomiti Prealpi",
 "url": "https://www.dolomitiprealpi.it/eventi/",
 "ok": true,
-"count": 23
+"count": 21
 },
 {
 "name": "Veneto Segreto",
 "url": "https://venetosegreto.com/eventi/",
 "ok": true,
-"count": 67
+"count": 63
 },
 {
 "name": "il Tacco di Bacco",
 "url": "https://iltaccodibacco.it/veneto/",
 "ok": true,
-"count": 67
+"count": 66
 },
 {
 "name": "Teatro La Fenice",
 "url": "https://www.teatrolafenice.it/calendario/",
 "ok": true,
-"count": 93
+"count": 92
 },
 {
 "name": "Circolo Culturale Bellunese",
@@ -41,7 +41,7 @@
 "name": "Turismo FVG",
 "url": "https://www.turismofvg.it/eventi/musica",
 "ok": true,
-"count": 18
+"count": 19
 }
 ],
 "links": [
@@ -229,284 +229,6 @@
 "id": "adc51d563c"
 },
 {
-"title": "FEMART - Festival MusicAntica e Arti - APPUNTI DI VIAGGIO Baroque Stories - Opposte traiettorie. Gli archi tra Venezia e la Mitteleuropa",
-"cat": "classica",
-"start": "2026-11-21",
-"url": "https://www.turismofvg.it/eventi/femart-festival-musicantica-e-arti-appunti-di-viaggio-baroque-stories-opposte-traiettorie-gli-archi-tra-venezia-e-la-mitteleuropa",
-"src": "Turismo FVG",
-"time": "18:00",
-"town": "Udine",
-"prov": "UD",
-"id": "f3509dcc8c"
-},
-{
-"title": "Zsigmond Gerlóczy",
-"cat": "classica",
-"start": "2026-11-21",
-"url": "https://www.teatrolafenice.it/event/zsigmond-gerloczy/",
-"src": "Teatro La Fenice",
-"time": "19:00",
-"venue": "Sale Apollinee",
-"town": "Venezia",
-"prov": "VE",
-"id": "fda62184e1"
-},
-{
-"title": "\"Together Aperto / FVG70\" Simposio e inaugurazione mostra",
-"cat": "mostre",
-"start": "2026-11-21",
-"url": "https://www.turismofvg.it/eventi/together-aperto-fvg70-simposio-e-inaugurazione-mostra",
-"src": "Turismo FVG",
-"town": "Gradisca d'Isonzo",
-"prov": "GO",
-"id": "9152455956"
-},
-{
-"title": "1976-2026 La forza di un territorio nella voce dei suoi cori",
-"cat": "classica",
-"start": "2026-11-21",
-"url": "https://www.turismofvg.it/eventi/1976-2026-la-forza-di-un-territorio-nella-voce-dei-suoi-cori-509498",
-"src": "Turismo FVG",
-"town": "Nimis",
-"prov": "FVG",
-"id": "a84d1d0fe8"
-},
-{
-"title": "67° rassegna dei cori Goriziani Cecilijanka 2026",
-"cat": "classica",
-"start": "2026-11-21",
-"url": "https://www.turismofvg.it/eventi/67-rassegna-dei-cori-goriziani-cecilijanka-2026",
-"src": "Turismo FVG",
-"town": "Gorizia",
-"prov": "GO",
-"id": "dcaebc23b1"
-},
-{
-"title": "Chris Jones e Paolo Ercoli in Concerto",
-"cat": "concerti",
-"start": "2026-11-21",
-"url": "https://www.visitdolomitibellunesi.com/it/eventi/chris-jones-e-paolo-ercoli-in-concerto?day=2026-11-21",
-"src": "Visit Dolomiti Bellunesi",
-"venue": "Municipio di Limana,Via Roma 90",
-"town": "Limana",
-"prov": "BL",
-"img": "https://www.visitdolomitibellunesi.com/imports/images/event/chris-jones-e-paolo-ercoli-in-concerto-2ff5b552-b93a-4909-b0bd-64315ed21bf2/123263/image-thumb__123263__thumb500/images-trn-1-b2c1786f-ac0b-4fe3-9f45-b2fa15c4115a-99-image.jpg",
-"id": "9c13e4e9c0"
-},
-{
-"title": "Concerto per Santa Cecilia: L’Orchestra dell'Università di Udine a Passons",
-"cat": "classica",
-"start": "2026-11-21",
-"url": "https://www.turismofvg.it/eventi/concerto-per-santa-cecilia-l-orchestra-dell-universita-di-udine-a-passons",
-"src": "Turismo FVG",
-"town": "Pasian di Prato",
-"prov": "FVG",
-"id": "9e9482752b"
-},
-{
-"title": "Delegazione FAI Trieste - Atelier d' Artista 2026",
-"cat": "mostre",
-"start": "2026-11-21",
-"url": "https://www.turismofvg.it/eventi/delegazione-fai-trieste-atelier-d-artista-2026",
-"src": "Turismo FVG",
-"town": "Trieste, Muggia",
-"prov": "TS",
-"id": "c42efc59ae"
-},
-{
-"title": "Dialogo fra Linee ed Emozioni",
-"cat": "mostre",
-"start": "2026-11-21",
-"url": "https://www.turismofvg.it/events20/details/382405",
-"src": "Turismo FVG",
-"town": "Majano",
-"prov": "UD",
-"id": "1aa9d0fc11"
-},
-{
-"title": "Gli appuntamenti del Conservatorio",
-"cat": "classica",
-"start": "2026-11-21",
-"url": "https://www.turismofvg.it/eventi/gli-appuntamenti-del-conservatorio-509304",
-"src": "Turismo FVG",
-"town": "Udine",
-"prov": "UD",
-"id": "f7d840a72f"
-},
-{
-"title": "L'arte della stampa: visita guidata alla Tipoteca di Cornuda",
-"cat": "visite",
-"start": "2026-11-21",
-"url": "https://venetosegreto.com/evento/l-arte-della-stampa-visita-guidata-alla-tipoteca-di-cornuda/",
-"src": "Veneto Segreto",
-"venue": "Musei",
-"prov": "TV",
-"img": "https://mio.venetosegreto.com/storage/events/thumbs/c4b5a5734116386ff48a4363d5553d46.webp",
-"price": "15€",
-"more": 1,
-"id": "083dd4ca8f"
-},
-{
-"title": "Le maglie del rugby: storia, identità e passione",
-"cat": "mostre",
-"start": "2026-11-21",
-"url": "https://www.turismofvg.it/eventi/le-maglie-del-rugby-storia-identita-e-passione",
-"src": "Turismo FVG",
-"town": "Udine",
-"prov": "UD",
-"id": "979d3e8129"
-},
-{
-"title": "L’anima del tempo tra gli alberi: Villa Gallarati Scotti e il suo giardino incantato",
-"cat": "visite",
-"start": "2026-11-21",
-"url": "https://venetosegreto.com/evento/l-anima-del-tempo-tra-gli-alberi-villa-gallarati-scotti-e-il-suo-giardino-incantato/",
-"src": "Veneto Segreto",
-"venue": "Ville venete",
-"prov": "PD",
-"img": "https://mio.venetosegreto.com/storage/events/thumbs/fcb4ee0afa649dc1f5202212d0c0b3ce.webp",
-"price": "16€",
-"id": "77c881f73b"
-},
-{
-"title": "Messa Solenne di Santa Cecilia - Coro Parrocchiale San Giacomo",
-"cat": "classica",
-"start": "2026-11-21",
-"url": "https://www.visitdolomitibellunesi.com/it/eventi/messa-solenne-di-santa-cecilia-coro-parrocchiale-san-giacomo?day=2026-11-21",
-"src": "Visit Dolomiti Bellunesi",
-"venue": "Pieve di Livinallongo BL",
-"town": "Livinallongo del Col di Lana",
-"prov": "BL",
-"img": "https://www.visitdolomitibellunesi.com/imports/images/event/messa-solenne-di-santa-cecilia-coro-parrocchiale-san-giacomo-9db10c6b-9e8b-4a94-a354-0de4d7ac15c2/122942/image-thumb__122942__thumb500/images-trn-1-4c28399d-0a70-4b2a-b1f2-db998d8b2450-99-image.jpg",
-"id": "a9d6d52cca"
-},
-{
-"title": "Nove: la città della ceramica e i suoi segreti (VI)",
-"cat": "visite",
-"start": "2026-11-21",
-"url": "https://venetosegreto.com/evento/nove-la-citt-della-ceramica-e-i-suoi-segreti-vi/",
-"src": "Veneto Segreto",
-"venue": "Musei",
-"prov": "VI",
-"img": "https://mio.venetosegreto.com/storage/events/thumbs/f2d416b0a1adb2173f798144af077e70.webp",
-"price": "15€",
-"id": "803b935bda"
-},
-{
-"title": "OnOff la sinfonia",
-"cat": "classica",
-"start": "2026-11-21",
-"url": "https://www.turismofvg.it/eventi/onoff-la-sinfonia",
-"src": "Turismo FVG",
-"town": "Udine",
-"prov": "UD",
-"id": "8fb0a398c1"
-},
-{
-"title": "Rassegna Antologica",
-"cat": "mostre",
-"start": "2026-11-21",
-"url": "https://www.visitdolomitibellunesi.com/it/eventi/rassegna-antologica",
-"src": "Visit Dolomiti Bellunesi",
-"end": "2026-11-22",
-"venue": "Sala Mostre, Municipio di Limana",
-"town": "Limana",
-"prov": "BL",
-"img": "https://www.visitdolomitibellunesi.com/imports/images/event/rassegna-antologica-073e094c-f04f-47bc-b8e4-93172d19602e/123245/image-thumb__123245__thumb500/images-trn-1-de259fef-0a47-4dcd-88d8-8fda10a6737d-99-image.jpg",
-"id": "377c45b173"
-},
-{
-"title": "Rovigo: la Città delle Rose ai tempi della Serenissima",
-"cat": "visite",
-"start": "2026-11-21",
-"url": "https://venetosegreto.com/evento/rovigo-la-citt-delle-rose-ai-tempi-della-serenissima/",
-"src": "Veneto Segreto",
-"venue": "Città e borghi",
-"prov": "RO",
-"img": "https://mio.venetosegreto.com/storage/events/thumbs/7e5b11d484ba1198335c47e9acfb6628.webp",
-"price": "15€",
-"id": "acfd82385a"
-},
-{
-"title": "Samsara: Visita guidata e concerto di pianoforte e mandolino",
-"cat": "classica",
-"start": "2026-11-21",
-"url": "https://www.turismofvg.it/eventi/samsara-visita-guidata-e-concerto-di-pianoforte-e-mandolino",
-"src": "Turismo FVG",
-"town": "Palmanova",
-"prov": "UD",
-"id": "129b02b1c7"
-},
-{
-"title": "Segovia Guitar Week 2026 - Duo Bandini Chiacchiaretta",
-"cat": "classica",
-"start": "2026-11-21",
-"url": "https://www.turismofvg.it/eventi/segovia-guitar-week-2026-duo-bandini-chiacchiaretta",
-"src": "Turismo FVG",
-"town": "Pordenone",
-"prov": "PN",
-"id": "235519a7fb"
-},
-{
-"title": "Una luce sempre accesa - Concerto Pianistico \"Un piano per due\"",
-"cat": "classica",
-"start": "2026-11-21",
-"url": "https://www.turismofvg.it/eventi/una-luce-sempre-accesa-concerto-pianistico-un-piano-per-due",
-"src": "Turismo FVG",
-"town": "Trieste",
-"prov": "TS",
-"id": "5177606204"
-},
-{
-"title": "Vespri in Cattedrale con Dennis Barezzani e Su Yu",
-"cat": "classica",
-"start": "2026-11-21",
-"url": "https://iltaccodibacco.it/veneto/eventi/337337.html",
-"src": "il Tacco di Bacco",
-"venue": "Cattedrale di Santa Maria Assunta – Duomo di Verona Verona",
-"town": "Verona",
-"prov": "VR",
-"img": "https://iltaccodibacco.it/img_eventi/2026/11/337337_20261120_164858.jpg",
-"id": "fe15b709b3"
-},
-{
-"title": "Villa Contarini, la Versailles del Veneto",
-"cat": "visite",
-"start": "2026-11-21",
-"url": "https://venetosegreto.com/evento/villa-contarini-la-versailles-del-veneto/",
-"src": "Veneto Segreto",
-"venue": "Ville venete",
-"prov": "PD",
-"img": "https://mio.venetosegreto.com/storage/events/thumbs/cca1ad45d26243c3e68670358e87b671.webp",
-"price": "16€",
-"id": "b1c45bb592"
-},
-{
-"title": "Visita al conservatorio musicale di Venezia Benedetto Marcello",
-"cat": "visite",
-"start": "2026-11-21",
-"url": "https://venetosegreto.com/evento/visita-al-conservatorio-musicale-di-venezia-benedetto-marcello/",
-"src": "Veneto Segreto",
-"venue": "Laguna e gite in barca",
-"prov": "VE",
-"img": "https://mio.venetosegreto.com/storage/events/thumbs/17dad8c9ecd7d077abce753970345c6b.webp",
-"price": "22€",
-"more": 1,
-"id": "7dc55877e6"
-},
-{
-"title": "Voci Spezzate, Voci Salvate: l'opera lirica incontra l'impegno civile",
-"cat": "classica",
-"start": "2026-11-21",
-"url": "https://www.visitdolomitibellunesi.com/it/eventi/voci-spezzate-voci-salvate-l-opera-lirica-incontra-l-impegno-civile?day=2026-11-21",
-"src": "Visit Dolomiti Bellunesi",
-"venue": "Auditorium Comunale",
-"town": "Belluno",
-"prov": "BL",
-"img": "https://www.visitdolomitibellunesi.com/imports/images/event/voci-spezzate-voci-salvate-l-opera-lirica-incontra-l-impegno-civile-1a780090-f028-4b50-a2de-98fdcf24e3b8/123808/image-thumb__123808__thumb500/images-trn-1-76daddc6-21a2-492d-82af-bc0fd66554f1-99-image.jpg",
-"id": "ffbd86ada3"
-},
-{
 "title": "Fedora",
 "cat": "classica",
 "start": "2026-11-22",
@@ -552,19 +274,6 @@
 "img": "https://mio.venetosegreto.com/storage/events/thumbs/8a6ce904a681a27ae3a13cb78ab38f4e.webp",
 "price": "20€",
 "id": "204893e9c8"
-},
-{
-"title": "Il castello di Valbona in un'atmosfera medievale",
-"cat": "visite",
-"start": "2026-11-22",
-"url": "https://venetosegreto.com/evento/il-castello-di-valbona-in-un-atmosfera-medievale/",
-"src": "Veneto Segreto",
-"venue": "Castelli",
-"prov": "PD",
-"img": "https://mio.venetosegreto.com/storage/events/thumbs/f5e9be8f610d929fd138f7cfea5c5a41.webp",
-"price": "16€",
-"more": 2,
-"id": "b71275551e"
 },
 {
 "title": "La Bohème di Giacomo Puccini con Gianna Fratta",
@@ -629,11 +338,13 @@
 "title": "Rassegna Antologica",
 "cat": "mostre",
 "start": "2026-11-22",
-"url": "https://www.dolomitiprealpi.it/event/rassegna-antologica-5/",
-"src": "Dolomiti Prealpi",
+"url": "https://www.visitdolomitibellunesi.com/it/eventi/rassegna-antologica",
+"src": "Visit Dolomiti Bellunesi",
+"venue": "Sala Mostre, Municipio di Limana",
 "town": "Limana",
 "prov": "BL",
-"id": "4a5d6005c8"
+"img": "https://www.visitdolomitibellunesi.com/imports/images/event/rassegna-antologica-073e094c-f04f-47bc-b8e4-93172d19602e/123245/image-thumb__123245__thumb500/images-trn-1-de259fef-0a47-4dcd-88d8-8fda10a6737d-99-image.jpg",
+"id": "69460934ba"
 },
 {
 "title": "Segreti di una villa palladiana: visita guidata a Villa Pojana (VI)",
@@ -692,19 +403,6 @@
 "id": "d5b60b325a"
 },
 {
-"title": "Villa Barbarigo a Noventa Vicentina: il potere della Serenissima",
-"cat": "visite",
-"start": "2026-11-22",
-"url": "https://venetosegreto.com/evento/villa-barbarigo-a-noventa-vicentina-il-potere-della-serenissima/",
-"src": "Veneto Segreto",
-"venue": "Ville venete",
-"prov": "VI",
-"img": "https://mio.venetosegreto.com/storage/events/thumbs/a82e974bca645a1de3b1caa81eb93d38.webp",
-"price": "16€",
-"more": 1,
-"id": "d809c6931c"
-},
-{
 "title": "Visita guidata a Villa Molin",
 "cat": "visite",
 "start": "2026-11-22",
@@ -729,6 +427,76 @@
 "id": "4624cb0017"
 },
 {
+"title": "Lunedì Sinfonica in Cavallerizza",
+"cat": "classica",
+"start": "2026-11-23",
+"url": "https://www.turismofvg.it/eventi/lunedi-sinfonica-in-cavallerizza-502373",
+"src": "Turismo FVG",
+"town": "Udine",
+"prov": "UD",
+"id": "ecb0a8d030"
+},
+{
+"title": "Concerti al Conservatorio - Emma castellano, arpa",
+"cat": "classica",
+"start": "2026-11-24",
+"url": "https://www.turismofvg.it/eventi/concerti-al-conservatorio-emma-castellano-arpa",
+"src": "Turismo FVG",
+"town": "Trieste",
+"prov": "TS",
+"id": "c8e7ba1688"
+},
+{
+"title": "Aspettando il Natale: Sinfonia di Talenti - 2° Edizione",
+"cat": "classica",
+"start": "2026-11-25",
+"url": "https://www.turismofvg.it/eventi/aspettando-il-natale-sinfonia-di-talenti-2-edizione",
+"src": "Turismo FVG",
+"town": "Palmanova",
+"prov": "UD",
+"id": "ff7680bcc2"
+},
+{
+"title": "Coro di Ruda - Genesi",
+"cat": "classica",
+"start": "2026-11-25",
+"url": "https://www.turismofvg.it/eventi/coro-di-ruda-genesi",
+"src": "Turismo FVG",
+"town": "Cervignano del Friuli",
+"prov": "UD",
+"id": "a6a9f172e4"
+},
+{
+"title": "L'Universo femminile, volti e colori",
+"cat": "mostre",
+"start": "2026-11-25",
+"url": "https://www.turismofvg.it/eventi/l-universo-femminile-volti-e-colori",
+"src": "Turismo FVG",
+"town": "Aiello del Friuli",
+"prov": "FVG",
+"id": "2145c72f6f"
+},
+{
+"title": "Teatro Miela - Quartetto Škampa",
+"cat": "classica",
+"start": "2026-11-25",
+"url": "https://www.turismofvg.it/eventi/teatro-miela-quartetto-skampa",
+"src": "Turismo FVG",
+"town": "Trieste",
+"prov": "TS",
+"id": "fb15af5784"
+},
+{
+"title": "Violenza psicologica: riconoscerla prima che diventi violenza fisica",
+"cat": "mostre",
+"start": "2026-11-26",
+"url": "https://www.turismofvg.it/eventi/violenza-psicologica-riconoscerla-prima-che-diventi-violenza-fisica",
+"src": "Turismo FVG",
+"town": "Aiello del Friuli",
+"prov": "FVG",
+"id": "f9a7d6d554"
+},
+{
 "title": "Musica d'autunno – concerto degli studenti e dei docenti",
 "cat": "classica",
 "start": "2026-11-27",
@@ -739,6 +507,26 @@
 "prov": "VR",
 "img": "https://iltaccodibacco.it/img_eventi/2026/11/336556_20261113_145158.jpg",
 "id": "723f35bbb1"
+},
+{
+"title": "Requiem per una donna",
+"cat": "classica",
+"start": "2026-11-27",
+"url": "https://www.turismofvg.it/eventi/requiem-per-una-donna-506452",
+"src": "Turismo FVG",
+"town": "Tavagnacco",
+"prov": "FVG",
+"id": "80310144b6"
+},
+{
+"title": "Riflessere 26/27 - Il coraggio dietro al velo",
+"cat": "mostre",
+"start": "2026-11-27",
+"url": "https://www.turismofvg.it/eventi/riflessere-26-27-il-coraggio-dietro-al-velo",
+"src": "Turismo FVG",
+"town": "Pordenone",
+"prov": "PN",
+"id": "ac8de52a51"
 },
 {
 "title": "“Note di rinascita della piccola Fenice”",
@@ -815,6 +603,16 @@
 "id": "8a5c0f6241"
 },
 {
+"title": "Delegazione FAI Trieste - Atelier d' Artista 2026",
+"cat": "mostre",
+"start": "2026-11-28",
+"url": "https://www.turismofvg.it/eventi/delegazione-fai-trieste-atelier-d-artista-2026",
+"src": "Turismo FVG",
+"town": "Trieste, Muggia",
+"prov": "TS",
+"id": "b8e0e84a2d"
+},
+{
 "title": "FRIDA e MARILYN. Destini incrociati. Amori, Passioni e Tormenti tra fotografia e arte",
 "cat": "mostre",
 "start": "2026-11-28",
@@ -826,6 +624,16 @@
 "prov": "VE",
 "img": "https://iltaccodibacco.it/img_eventi/2026/11/336276_20261111_075414.jpg",
 "id": "361269ee58"
+},
+{
+"title": "Flor de Amor - Costruiamo insieme la corona dell'Avvento!",
+"cat": "mostre",
+"start": "2026-11-28",
+"url": "https://www.turismofvg.it/eventi/flor-de-amor-costruiamo-insieme-la-corona-dell-avvento",
+"src": "Turismo FVG",
+"town": "Muggia",
+"prov": "TS",
+"id": "469d26ff3c"
 },
 {
 "title": "Il Parco di Villa Cittadella Vigodarzere",
@@ -887,6 +695,16 @@
 "prov": "VR",
 "img": "https://iltaccodibacco.it/img_eventi/2026/11/337337_20261120_164858.jpg",
 "id": "0f42882906"
+},
+{
+"title": "Visita alla mostra fotografica Francesco Dolfo \"Fuoriserie\"",
+"cat": "mostre",
+"start": "2026-11-28",
+"url": "https://www.turismofvg.it/eventi/visita-alla-mostra-fotografica-francesco-dolfo-fuoriserie",
+"src": "Turismo FVG",
+"town": "Pordenone",
+"prov": "PN",
+"id": "a8af3017e2"
 },
 {
 "title": "Visita esclusiva a Casa Conti nel cuore di Padova",
@@ -963,6 +781,16 @@
 "id": "0ab58dcd2b"
 },
 {
+"title": "Evaristo Cian - Di segni e di Temi",
+"cat": "mostre",
+"start": "2026-11-29",
+"url": "https://www.turismofvg.it/eventi/evaristo-cian-di-segni-e-di-temi",
+"src": "Turismo FVG",
+"town": "Gorizia",
+"prov": "GO",
+"id": "185a4a78c6"
+},
+{
 "title": "Il Primo Ecomuseo Agricolo Verticale d’Europa",
 "cat": "visite",
 "start": "2026-11-29",
@@ -973,6 +801,19 @@
 "img": "https://mio.venetosegreto.com/storage/events/thumbs/a9100801b09098d108fe909f5d592728.webp",
 "price": "15€",
 "id": "824ede77dd"
+},
+{
+"title": "Il castello di Valbona in un'atmosfera medievale",
+"cat": "visite",
+"start": "2026-11-29",
+"url": "https://venetosegreto.com/evento/il-castello-di-valbona-in-un-atmosfera-medievale/",
+"src": "Veneto Segreto",
+"venue": "Castelli",
+"prov": "PD",
+"img": "https://mio.venetosegreto.com/storage/events/thumbs/fa04e8b6627bb223cf9067a7c2443bb6.webp",
+"price": "16€",
+"more": 1,
+"id": "d468927b8c"
 },
 {
 "title": "Il magico castello di Zumelle in Valbelluna - speciale Natale",
@@ -1011,6 +852,16 @@
 "price": "16€",
 "more": 1,
 "id": "12aa10d528"
+},
+{
+"title": "Viaggiamo nel mondo con Laura Loiotile",
+"cat": "mostre",
+"start": "2026-11-29",
+"url": "https://www.turismofvg.it/eventi/viaggiamo-nel-mondo-con-laura-loiotile",
+"src": "Turismo FVG",
+"town": "Aquileia",
+"prov": "UD",
+"id": "031f7af816"
 },
 {
 "title": "Villa Cordellina: Tiepolo experience",
@@ -1572,6 +1423,18 @@
 "id": "081ef9f6f4"
 },
 {
+"title": "Visita al conservatorio musicale di Venezia Benedetto Marcello",
+"cat": "visite",
+"start": "2026-12-12",
+"url": "https://venetosegreto.com/evento/visita-al-conservatorio-musicale-di-venezia-benedetto-marcello/",
+"src": "Veneto Segreto",
+"venue": "Laguna e gite in barca",
+"prov": "VE",
+"img": "https://mio.venetosegreto.com/storage/events/thumbs/40ab2bdd0728dbcf13d196c7a5894be9.webp",
+"price": "22€",
+"id": "b69d01535a"
+},
+{
 "title": "Campo di Brenzone: tra antichi ruderi e panorami mozzafiato sul Lago di Garda",
 "cat": "visite",
 "start": "2026-12-13",
@@ -1815,6 +1678,18 @@
 "id": "6fbb7b2924"
 },
 {
+"title": "L'arte della stampa: visita guidata alla Tipoteca di Cornuda",
+"cat": "visite",
+"start": "2026-12-19",
+"url": "https://venetosegreto.com/evento/l-arte-della-stampa-visita-guidata-alla-tipoteca-di-cornuda/",
+"src": "Veneto Segreto",
+"venue": "Musei",
+"prov": "TV",
+"img": "https://mio.venetosegreto.com/storage/events/thumbs/d349ead88675087db03ee6e3368ab63b.webp",
+"price": "15€",
+"id": "c08eb91963"
+},
+{
 "title": "La Padova delle origini: un viaggio nella storia, da Prato della Valle a Santa Giustina",
 "cat": "visite",
 "start": "2026-12-19",
@@ -1969,6 +1844,18 @@
 "price": "15€",
 "more": 1,
 "id": "bd18fcb07d"
+},
+{
+"title": "Villa Barbarigo a Noventa Vicentina: il potere della Serenissima",
+"cat": "visite",
+"start": "2026-12-27",
+"url": "https://venetosegreto.com/evento/villa-barbarigo-a-noventa-vicentina-il-potere-della-serenissima/",
+"src": "Veneto Segreto",
+"venue": "Ville venete",
+"prov": "VI",
+"img": "https://mio.venetosegreto.com/storage/events/thumbs/4883f504b2b2a3e26fec57ef3be09194.webp",
+"price": "16€",
+"id": "d540b79459"
 },
 {
 "title": "🗝️SECRET TOUR®: CASTELBRANDO, TRA LE COLLINE DEL PROSECCO",
