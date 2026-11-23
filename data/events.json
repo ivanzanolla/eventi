@@ -1,35 +1,35 @@
 {
-"generated": "2026-11-22T13:38+01:00",
+"generated": "2026-11-23T15:43+01:00",
 "sources": [
 {
 "name": "Visit Dolomiti Bellunesi",
 "url": "https://www.visitdolomitibellunesi.com/it/eventi/calendario-eventi",
 "ok": true,
-"count": 37
+"count": 33
 },
 {
 "name": "Dolomiti Prealpi",
 "url": "https://www.dolomitiprealpi.it/eventi/",
 "ok": true,
-"count": 21
+"count": 18
 },
 {
 "name": "Veneto Segreto",
 "url": "https://venetosegreto.com/eventi/",
 "ok": true,
-"count": 63
+"count": 58
 },
 {
 "name": "il Tacco di Bacco",
 "url": "https://iltaccodibacco.it/veneto/",
 "ok": true,
-"count": 66
+"count": 63
 },
 {
 "name": "Teatro La Fenice",
 "url": "https://www.teatrolafenice.it/calendario/",
 "ok": true,
-"count": 92
+"count": 91
 },
 {
 "name": "Circolo Culturale Bellunese",
@@ -41,7 +41,7 @@
 "name": "Turismo FVG",
 "url": "https://www.turismofvg.it/eventi/musica",
 "ok": true,
-"count": 19
+"count": 16
 }
 ],
 "links": [
@@ -97,19 +97,6 @@
 "prov": "PN",
 "img": "https://iltaccodibacco.it/img_eventi/2026/10/333540_20261014_171603.jpg",
 "id": "cd838767cb"
-},
-{
-"title": "Heinz Mack. Color in Forma",
-"cat": "mostre",
-"start": "2026-10-18",
-"url": "https://iltaccodibacco.it/veneto/eventi/334015.html",
-"src": "il Tacco di Bacco",
-"end": "2026-11-22",
-"venue": "Palazzo Bembo Venezia",
-"town": "Venezia",
-"prov": "VE",
-"img": "https://iltaccodibacco.it/img_eventi/2026/10/334015_20261019_174656.jpg",
-"id": "fb64a1cde8"
 },
 {
 "title": "Sebastião Salgado. Fotografie della collezione della Maison Européenne de la Photographie",
@@ -229,53 +216,6 @@
 "id": "adc51d563c"
 },
 {
-"title": "Fedora",
-"cat": "classica",
-"start": "2026-11-22",
-"url": "https://www.teatrolafenice.it/event/fedora/",
-"src": "Teatro La Fenice",
-"time": "15:30",
-"venue": "Teatro La Fenice",
-"town": "Venezia",
-"prov": "VE",
-"img": "https://www.teatrolafenice.it/wp-content/uploads/2026/06/fedora-1.jpg",
-"id": "956565e43a"
-},
-{
-"title": "67° rassegna dei cori Goriziani Cecilijanka 2026",
-"cat": "classica",
-"start": "2026-11-22",
-"url": "https://www.turismofvg.it/eventi/67-rassegna-dei-cori-goriziani-cecilijanka-2026",
-"src": "Turismo FVG",
-"town": "Gorizia",
-"prov": "GO",
-"id": "23fb2327b5"
-},
-{
-"title": "Concerto di Santa Cecilia",
-"cat": "classica",
-"start": "2026-11-22",
-"url": "https://www.visitdolomitibellunesi.com/it/eventi/concerto-di-santa-cecilia-1?day=2026-11-22",
-"src": "Visit Dolomiti Bellunesi",
-"venue": "Duomo",
-"town": "Belluno",
-"prov": "BL",
-"img": "https://www.visitdolomitibellunesi.com/imgfiles/placeholder.svg",
-"id": "033b45219d"
-},
-{
-"title": "I Segreti dello Shabbat: visita speciale alla Padova Ebraica",
-"cat": "visite",
-"start": "2026-11-22",
-"url": "https://venetosegreto.com/evento/i-segreti-dello-shabbat-visita-speciale-alla-padova-ebraica/",
-"src": "Veneto Segreto",
-"venue": "Musei",
-"prov": "PD",
-"img": "https://mio.venetosegreto.com/storage/events/thumbs/8a6ce904a681a27ae3a13cb78ab38f4e.webp",
-"price": "20€",
-"id": "204893e9c8"
-},
-{
 "title": "La Bohème di Giacomo Puccini con Gianna Fratta",
 "cat": "classica",
 "start": "2026-11-22",
@@ -287,144 +227,6 @@
 "prov": "VR",
 "img": "https://iltaccodibacco.it/img_eventi/2026/11/337070_20261119_073816.jpg",
 "id": "f1aed46e50"
-},
-{
-"title": "Musica antica, nuova danza",
-"cat": "classica",
-"start": "2026-11-22",
-"url": "https://www.visitdolomitibellunesi.com/it/eventi/musica-antica-nuova-danza?day=2026-11-22",
-"src": "Visit Dolomiti Bellunesi",
-"venue": "Colonia alpina Pozzale",
-"town": "Pieve di Cadore",
-"prov": "BL",
-"img": "https://www.visitdolomitibellunesi.com/imports/images/event/musica-antica-nuova-danza-b64d87a3-8dcd-4164-8c69-d114837fe3c1/123233/image-thumb__123233__thumb500/images-trn-1-dabc5f78-61e9-47d8-a80f-6a546c0c2b59-99-image.jpg",
-"id": "090af63f94"
-},
-{
-"title": "Osserviamo il mondo al microscopio",
-"cat": "mostre",
-"start": "2026-11-22",
-"url": "https://www.turismofvg.it/eventi/osserviamo-il-mondo-al-microscopio",
-"src": "Turismo FVG",
-"town": "Pordenone",
-"prov": "PN",
-"id": "05e1979024"
-},
-{
-"title": "PADOVA URBS PICTA: L'Oratorio di S. Giorgio e la Scoletta del Santo",
-"cat": "visite",
-"start": "2026-11-22",
-"url": "https://venetosegreto.com/evento/padova-urbs-picta-l-oratorio-di-s-giorgio-e-la-scoletta-del-santo/",
-"src": "Veneto Segreto",
-"venue": "Musei",
-"prov": "PD",
-"img": "https://mio.venetosegreto.com/storage/events/thumbs/4d186993fd5ba53ddc9678b8309c219a.webp",
-"price": "16€",
-"id": "6d71b323a9"
-},
-{
-"title": "Palazzo della Ragione e le sue piazze",
-"cat": "visite",
-"start": "2026-11-22",
-"url": "https://venetosegreto.com/evento/palazzo-della-ragione-e-le-sue-piazze/",
-"src": "Veneto Segreto",
-"venue": "Musei",
-"prov": "PD",
-"img": "https://mio.venetosegreto.com/storage/events/thumbs/79a9f8a554ea38716d6dbf0d63a8b553.webp",
-"price": "17€",
-"id": "c83bd329e1"
-},
-{
-"title": "Rassegna Antologica",
-"cat": "mostre",
-"start": "2026-11-22",
-"url": "https://www.visitdolomitibellunesi.com/it/eventi/rassegna-antologica",
-"src": "Visit Dolomiti Bellunesi",
-"venue": "Sala Mostre, Municipio di Limana",
-"town": "Limana",
-"prov": "BL",
-"img": "https://www.visitdolomitibellunesi.com/imports/images/event/rassegna-antologica-073e094c-f04f-47bc-b8e4-93172d19602e/123245/image-thumb__123245__thumb500/images-trn-1-de259fef-0a47-4dcd-88d8-8fda10a6737d-99-image.jpg",
-"id": "69460934ba"
-},
-{
-"title": "Segreti di una villa palladiana: visita guidata a Villa Pojana (VI)",
-"cat": "visite",
-"start": "2026-11-22",
-"url": "https://venetosegreto.com/evento/segreti-di-una-villa-palladiana-visita-guidata-a-villa-pojana-vi/",
-"src": "Veneto Segreto",
-"venue": "Ville venete",
-"prov": "VI",
-"img": "https://mio.venetosegreto.com/storage/events/thumbs/156a71f77d01c8e914ef64207831cfb6.webp",
-"price": "16€",
-"id": "e3d6652288"
-},
-{
-"title": "Silvia Carlin, pianoforte",
-"cat": "classica",
-"start": "2026-11-22",
-"url": "https://www.visitdolomitibellunesi.com/it/eventi/silvia-carlin-pianoforte?day=2026-11-22",
-"src": "Visit Dolomiti Bellunesi",
-"venue": "Auditorium Comunale",
-"town": "Belluno",
-"prov": "BL",
-"img": "https://www.visitdolomitibellunesi.com/imports/images/event/silvia-carlin-pianoforte-f58557b1-6210-4c9c-b8cd-fc0d892dc3b5/122976/image-thumb__122976__thumb500/images-trn-1-145d36ea-ea77-497a-9c66-abed3d0c5c4d-99-image.jpg",
-"id": "96801099de"
-},
-{
-"title": "Tra Venezia e Salisburgo - musica sacra del Settecento",
-"cat": "classica",
-"start": "2026-11-22",
-"url": "https://www.turismofvg.it/eventi/tra-venezia-e-salisburgo-musica-sacra-del-settecento",
-"src": "Turismo FVG",
-"town": "Spilimbergo",
-"prov": "PN",
-"id": "ef02b8a2d3"
-},
-{
-"title": "VISITA GUIDATA AL MUSEO NATURALISTICO WILD LIFE MUSEUM",
-"cat": "visite",
-"start": "2026-11-22",
-"url": "https://venetosegreto.com/evento/visita-guidata-al-museo-naturalistico-wild-life-museum/",
-"src": "Veneto Segreto",
-"venue": "Musei",
-"prov": "VI",
-"img": "https://mio.venetosegreto.com/storage/events/thumbs/e1ce97f95fec651ef0f31ae05e049b7d.webp",
-"price": "12€",
-"id": "1f6b86104c"
-},
-{
-"title": "Viaggiamo nel mondo con Laura Loiotile",
-"cat": "mostre",
-"start": "2026-11-22",
-"url": "https://www.turismofvg.it/eventi/viaggiamo-nel-mondo-con-laura-loiotile",
-"src": "Turismo FVG",
-"town": "Aquileia",
-"prov": "UD",
-"id": "d5b60b325a"
-},
-{
-"title": "Visita guidata a Villa Molin",
-"cat": "visite",
-"start": "2026-11-22",
-"url": "https://venetosegreto.com/evento/visita-guidata-a-villa-molin/",
-"src": "Veneto Segreto",
-"venue": "Ville venete",
-"prov": "PD",
-"img": "https://mio.venetosegreto.com/storage/events/thumbs/78b6f0377f190dd52201240206521d76.webp",
-"price": "16€",
-"id": "d7bfe0fc8c"
-},
-{
-"title": "Širom in concerto",
-"cat": "concerti",
-"start": "2026-11-22",
-"url": "https://www.visitdolomitibellunesi.com/it/eventi/sirom-in-concerto?day=2026-11-22",
-"src": "Visit Dolomiti Bellunesi",
-"venue": "Hangar 11 – Via Tiziano Vecellio 82/n",
-"town": "Belluno",
-"prov": "BL",
-"img": "https://www.visitdolomitibellunesi.com/imports/images/event/-irom-in-concerto-9c445585-837e-4613-9d3c-5032298a61d0/123384/image-thumb__123384__thumb500/images-trn-1-74e9db60-fbed-4b54-9076-45fb9f868672-99-image.jpg",
-"id": "4624cb0017"
 },
 {
 "title": "Lunedì Sinfonica in Cavallerizza",
@@ -555,6 +357,16 @@
 "id": "4d2281de4f"
 },
 {
+"title": "34^ Rassegna Corale Sot L’Ansul",
+"cat": "classica",
+"start": "2026-11-28",
+"url": "https://www.turismofvg.it/eventi/34-rassegna-corale-sot-l-ansul",
+"src": "Turismo FVG",
+"town": "Cordenons",
+"prov": "PN",
+"id": "0dcdba9a77"
+},
+{
 "title": "37^ Rassegna di Musica Sacra \"Don Sergio Manfroi\"",
 "cat": "classica",
 "start": "2026-11-28",
@@ -661,6 +473,18 @@
 "id": "a4ea4ebc63"
 },
 {
+"title": "La musica unisce. Ricordando Renato.",
+"cat": "concerti",
+"start": "2026-11-28",
+"url": "https://www.visitdolomitibellunesi.com/it/eventi/la-musica-unisce-ricordando-renato?day=2026-11-28",
+"src": "Visit Dolomiti Bellunesi",
+"venue": "Duomo di Lamon",
+"town": "Lamon",
+"prov": "BL",
+"img": "https://www.visitdolomitibellunesi.com/imports/images/event/la-musica-unisce-ricordando-renato-58f2eb7f-79c2-4d70-8ebb-02b196127897/124002/image-thumb__124002__thumb500/images-trn-1-24418f4f-d660-4c62-98bd-89006560f7c0-99-image.jpg",
+"id": "29c4e7394d"
+},
+{
 "title": "Passeggiata alla scoperta del Ponte Romano di Bardies",
 "cat": "visite",
 "start": "2026-11-28",
@@ -673,6 +497,16 @@
 "id": "09e693c520"
 },
 {
+"title": "Rocking roots – Coro del Rojale Story",
+"cat": "classica",
+"start": "2026-11-28",
+"url": "https://www.turismofvg.it/eventi/rocking-roots-coro-del-rojale-story",
+"src": "Turismo FVG",
+"town": "Reana del Rojale",
+"prov": "FVG",
+"id": "53eac51dff"
+},
+{
 "title": "UN VIAGGIO NELLA PRIMA DISTILLERIA D'ITALIA",
 "cat": "visite",
 "start": "2026-11-28",
@@ -682,6 +516,7 @@
 "prov": "VI",
 "img": "https://mio.venetosegreto.com/storage/events/thumbs/7a2b9ca3b61b95308b30d236a029fbf0.webp",
 "price": "19€",
+"more": 1,
 "id": "6b1bf63bb5"
 },
 {
@@ -1493,6 +1328,18 @@
 "img": "https://mio.venetosegreto.com/storage/events/thumbs/c56aa9ac657e8fa6ba867595e8a88518.webp",
 "price": "18€",
 "id": "9ff2b06a6a"
+},
+{
+"title": "VILLA EMO CAPODILISTA",
+"cat": "visite",
+"start": "2026-12-13",
+"url": "https://venetosegreto.com/evento/villa-emo-capodilista/",
+"src": "Veneto Segreto",
+"venue": "Ville venete",
+"prov": "PD",
+"img": "https://mio.venetosegreto.com/storage/events/thumbs/e2ead77da0d6c3219a4f8fc1d2d21130.webp",
+"price": "19€",
+"id": "ad08cf7bb6"
 },
 {
 "title": "VISITA GUIDATA A VILLA WIDMANN CON DEGUSTAZIONE: TRA STORIA E SAPORI DELLA LAGUNA (VE)",
