@@ -1,5 +1,5 @@
 {
-"generated": "2026-11-23T15:43+01:00",
+"generated": "2026-11-24T15:55+01:00",
 "sources": [
 {
 "name": "Visit Dolomiti Bellunesi",
@@ -17,7 +17,7 @@
 "name": "Veneto Segreto",
 "url": "https://venetosegreto.com/eventi/",
 "ok": true,
-"count": 58
+"count": 60
 },
 {
 "name": "il Tacco di Bacco",
@@ -29,7 +29,7 @@
 "name": "Teatro La Fenice",
 "url": "https://www.teatrolafenice.it/calendario/",
 "ok": true,
-"count": 91
+"count": 92
 },
 {
 "name": "Circolo Culturale Bellunese",
@@ -229,16 +229,6 @@
 "id": "f1aed46e50"
 },
 {
-"title": "Lunedì Sinfonica in Cavallerizza",
-"cat": "classica",
-"start": "2026-11-23",
-"url": "https://www.turismofvg.it/eventi/lunedi-sinfonica-in-cavallerizza-502373",
-"src": "Turismo FVG",
-"town": "Udine",
-"prov": "UD",
-"id": "ecb0a8d030"
-},
-{
 "title": "Concerti al Conservatorio - Emma castellano, arpa",
 "cat": "classica",
 "start": "2026-11-24",
@@ -287,6 +277,16 @@
 "town": "Trieste",
 "prov": "TS",
 "id": "fb15af5784"
+},
+{
+"title": "Pianoforte poetico - Ero e Leandro",
+"cat": "classica",
+"start": "2026-11-26",
+"url": "https://www.turismofvg.it/eventi/pianoforte-poetico-ero-e-leandro",
+"src": "Turismo FVG",
+"town": "San Vito al Tagliamento",
+"prov": "PN",
+"id": "c40aa7717a"
 },
 {
 "title": "Violenza psicologica: riconoscerla prima che diventi violenza fisica",
@@ -370,7 +370,7 @@
 "title": "37^ Rassegna di Musica Sacra \"Don Sergio Manfroi\"",
 "cat": "classica",
 "start": "2026-11-28",
-"url": "https://www.visitdolomitibellunesi.com/it/eventi/37-rassegna-di-musica-sacra-don-sergio-manfroi-1?day=2026-11-28",
+"url": "https://www.visitdolomitibellunesi.com/it/eventi/37-rassegna-di-musica-sacra-don-sergio-manfroi?day=2026-11-28",
 "src": "Visit Dolomiti Bellunesi",
 "venue": "Chiesa B.V. Maria Annunziata",
 "town": "Sedico",
@@ -595,7 +595,7 @@
 "title": "37^ Rassegna di Musica Sacra \"Don Sergio Manfroi\"",
 "cat": "classica",
 "start": "2026-11-29",
-"url": "https://www.visitdolomitibellunesi.com/it/eventi/37-rassegna-di-musica-sacra-don-sergio-manfroi-2?day=2026-11-29",
+"url": "https://www.visitdolomitibellunesi.com/it/eventi/37-rassegna-di-musica-sacra-don-sergio-manfroi-1?day=2026-11-29",
 "src": "Visit Dolomiti Bellunesi",
 "venue": "Chiesa Santa Maria Assunta",
 "town": "Belluno",
@@ -1354,6 +1354,18 @@
 "id": "d87e6ef940"
 },
 {
+"title": "Visita guidata allo splendido Palazzo Malmignati a Lendinara",
+"cat": "visite",
+"start": "2026-12-13",
+"url": "https://venetosegreto.com/evento/visita-guidata-allo-splendido-palazzo-malmignati-a-lendinara/",
+"src": "Veneto Segreto",
+"venue": "Ville venete",
+"prov": "RO",
+"img": "https://mio.venetosegreto.com/storage/events/thumbs/42453bae7f66c2224026b81dfcf7e509.webp",
+"price": "14€",
+"id": "d53e1864ab"
+},
+{
 "title": "BACH. La Luce del Natale",
 "cat": "classica",
 "start": "2026-12-14",
@@ -1523,6 +1535,18 @@
 "prov": "BL",
 "img": "https://www.visitdolomitibellunesi.com/imports/images/event/dicembre-al-museo-5bf4e5aa-006e-4e3a-b925-b090b1e7ca6e/123720/image-thumb__123720__thumb500/images-trn-1-29c1caed-d46e-491f-97a1-0635d2f2918d-99-image.jpg",
 "id": "6fbb7b2924"
+},
+{
+"title": "Il Castello Scola Camerini, storia e segreti oltre il cancello (VI)",
+"cat": "visite",
+"start": "2026-12-19",
+"url": "https://venetosegreto.com/evento/il-castello-scola-camerini-storia-e-segreti-oltre-il-cancello-vi/",
+"src": "Veneto Segreto",
+"venue": "Castelli",
+"prov": "VI",
+"img": "https://mio.venetosegreto.com/storage/events/thumbs/a137d4643b4e496f1405722ea83e9796.webp",
+"price": "18€",
+"id": "f0a9a54a77"
 },
 {
 "title": "L'arte della stampa: visita guidata alla Tipoteca di Cornuda",
@@ -2109,6 +2133,19 @@
 "prov": "VE",
 "img": "https://www.teatrolafenice.it/wp-content/uploads/2019/08/DSC4557-e1780476122167.jpg",
 "id": "78dd2d1258"
+},
+{
+"title": "Madama Butterfly & Carnival Cocktail",
+"cat": "classica",
+"start": "2027-02-07",
+"url": "https://www.teatrolafenice.it/event/madama-butterfly-carnival-cocktail/",
+"src": "Teatro La Fenice",
+"time": "17:00",
+"venue": "Teatro La Fenice",
+"town": "Venezia",
+"prov": "VE",
+"img": "https://www.teatrolafenice.it/wp-content/uploads/2025/12/LaFenice_Carnevale-160n-scaled.jpg",
+"id": "f8d0f437e1"
 },
 {
 "title": "Madama Butterfly",
