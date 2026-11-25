@@ -1,5 +1,5 @@
 {
-"generated": "2026-11-25T07:32+01:00",
+"generated": "2026-11-25T15:26+01:00",
 "sources": [
 {
 "name": "Visit Dolomiti Bellunesi",
@@ -17,7 +17,7 @@
 "name": "Veneto Segreto",
 "url": "https://venetosegreto.com/eventi/",
 "ok": true,
-"count": 61
+"count": 62
 },
 {
 "name": "il Tacco di Bacco",
@@ -1278,6 +1278,18 @@
 "img": "https://mio.venetosegreto.com/storage/events/thumbs/fc6287135f92506781bf5d2fc59ddc46.webp",
 "price": "20€",
 "id": "f6ab61a5e5"
+},
+{
+"title": "Segreti e Meraviglie dell’Orto Botanico di Padova",
+"cat": "visite",
+"start": "2026-12-12",
+"url": "https://venetosegreto.com/evento/segreti-e-meraviglie-dell-orto-botanico-di-padova/",
+"src": "Veneto Segreto",
+"venue": "Musei",
+"prov": "PD",
+"img": "https://mio.venetosegreto.com/storage/events/thumbs/fa8b4035b6ad6c2a03fef39408f4ae9e.webp",
+"price": "16€",
+"id": "3c69c4d248"
 },
 {
 "title": "Vespri in Cattedrale con Raffaele Capozzi e Kevin Franceschetti",
