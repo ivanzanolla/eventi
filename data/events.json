@@ -1,5 +1,5 @@
 {
-"generated": "2026-11-24T15:55+01:00",
+"generated": "2026-11-25T07:32+01:00",
 "sources": [
 {
 "name": "Visit Dolomiti Bellunesi",
@@ -17,13 +17,13 @@
 "name": "Veneto Segreto",
 "url": "https://venetosegreto.com/eventi/",
 "ok": true,
-"count": 60
+"count": 61
 },
 {
 "name": "il Tacco di Bacco",
 "url": "https://iltaccodibacco.it/veneto/",
 "ok": true,
-"count": 63
+"count": 64
 },
 {
 "name": "Teatro La Fenice",
@@ -38,10 +38,16 @@
 "count": 3
 },
 {
+"name": "Musei di Bassano",
+"url": "https://www.museibassano.it/it/mostre/in_corso",
+"ok": true,
+"count": 3
+},
+{
 "name": "Turismo FVG",
 "url": "https://www.turismofvg.it/eventi/musica",
 "ok": true,
-"count": 16
+"count": 15
 }
 ],
 "links": [
@@ -123,6 +129,19 @@
 "prov": "PN",
 "img": "https://iltaccodibacco.it/img_eventi/2026/10/334584_20261023_180256.jpg",
 "id": "68bf1e4a4c"
+},
+{
+"title": "Oltre i ricettari. Dietetica, ittiologia, botanica e farmacopea tra XV e XVII secolo",
+"cat": "mostre",
+"start": "2026-10-30",
+"url": "https://www.museibassano.it/it/mostra/oltre-i-ricettari-dietetica-ittiologia-botanica-e-farmacopea-tra-xv-e-xvii-secolo",
+"src": "Musei di Bassano",
+"end": "2027-02-20",
+"venue": "Biblioteca Civica",
+"town": "Bassano del Grappa",
+"prov": "VI",
+"img": "https://www.museibassano.it/pixportfolio/museibassano_150_cover.jpg",
+"id": "8b4b215f2e"
 },
 {
 "title": "Tamaki Yoshida. Unfolding",
@@ -229,16 +248,6 @@
 "id": "f1aed46e50"
 },
 {
-"title": "Concerti al Conservatorio - Emma castellano, arpa",
-"cat": "classica",
-"start": "2026-11-24",
-"url": "https://www.turismofvg.it/eventi/concerti-al-conservatorio-emma-castellano-arpa",
-"src": "Turismo FVG",
-"town": "Trieste",
-"prov": "TS",
-"id": "c8e7ba1688"
-},
-{
 "title": "Aspettando il Natale: Sinfonia di Talenti - 2° Edizione",
 "cat": "classica",
 "start": "2026-11-25",
@@ -277,6 +286,18 @@
 "town": "Trieste",
 "prov": "TS",
 "id": "fb15af5784"
+},
+{
+"title": "Ermanno Wolf-Ferrari 150",
+"cat": "classica",
+"start": "2026-11-26",
+"url": "https://iltaccodibacco.it/veneto/eventi/337905.html",
+"src": "il Tacco di Bacco",
+"venue": "Auditorium Nuovo Montemezzi",
+"town": "Verona",
+"prov": "VR",
+"img": "https://iltaccodibacco.it/img_eventi/2026/11/337905_20261124_210844.jpg",
+"id": "b107e9f748"
 },
 {
 "title": "Pianoforte poetico - Ero e Leandro",
@@ -1232,6 +1253,19 @@
 "img": "https://mio.venetosegreto.com/storage/events/thumbs/b9d58a099abcadbd1a29b77a75950768.webp",
 "price": "16€",
 "id": "72f6e2dbe5"
+},
+{
+"title": "Il Ritorno del \"Cavallo Colossale\" di Antonio Canova al Museo Civico di Bassano del Grappa",
+"cat": "mostre",
+"start": "2026-12-12",
+"url": "https://www.museibassano.it/it/mostra/il-ritorno-del-cavallo-colossale-di-antonio-canova-al-museo-civico-di-bassano-del-grappa",
+"src": "Musei di Bassano",
+"end": "2027-03-12",
+"venue": "Museo Civico di Bassano del Grappa",
+"town": "Bassano del Grappa",
+"prov": "VI",
+"img": "https://www.museibassano.it/pixportfolio/1791874058_1496acdd40a276dd_cover.jpg",
+"id": "e87873c226"
 },
 {
 "title": "SECRET TOUR®: La Rotonda di Palladio",
@@ -2283,6 +2317,18 @@
 "prov": "VE",
 "img": "https://www.teatrolafenice.it/wp-content/uploads/2026/06/humperdink.jpg",
 "id": "eaf16ac82e"
+},
+{
+"title": "VISITA AL GRANDIOSO PALAZZO GUALDO, NEL CUORE DI VICENZA",
+"cat": "visite",
+"start": "2027-03-07",
+"url": "https://venetosegreto.com/evento/visita-al-grandioso-palazzo-gualdo-nel-cuore-di-vicenza/",
+"src": "Veneto Segreto",
+"venue": "Ville venete",
+"prov": "VI",
+"img": "https://mio.venetosegreto.com/storage/events/thumbs/03dc1dc2109c46b97f8183239bfe2836.webp",
+"price": "17€",
+"id": "008804a835"
 },
 {
 "title": "Giornata internazionale dei diritti delle donne",
