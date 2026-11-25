@@ -63,6 +63,7 @@ main{padding:4px 12px 40px;max-width:760px;margin:0 auto}
 .ok{color:var(--c-visite)} .ko{color:#c0392b}
 .more{display:block;width:100%;margin:6px 0 0;padding:10px;border:1px dashed var(--line);border-radius:10px;
   background:transparent;color:var(--muted);font-size:14px}
+.jump{margin:10px 0 0;border-style:solid;color:var(--c-mostre);font-weight:600;text-align:left}
 </style>
 </head>
 <body>
@@ -156,6 +157,7 @@ function card(e){
   const bits = [];
   if(e.time) bits.push(`<span class="time">${esc(e.time)}</span>`);
   if(where.length) bits.push(esc(where.join(", ")));
+  if(e.opening) bits.unshift(`<b>apertura</b>`);
   if(e.end) bits.push(`fino al ${fmtShort(e.end)}`);
   if(e.more) bits.push(`+${e.more} ${e.more>1?"date":"data"}`);
   if(e.price) bits.push(esc(e.price));
@@ -197,8 +199,16 @@ function render(){
     if(next.length) html += `<div class="day">In arrivo</div>` + next.map(e => card({...e, venue:`dal ${fmtShort(e.start)}` + (e.venue?` · ${e.venue}`:"")})).join("");
     if(!ms.length) html = `<div class="empty">Nessuna mostra con questi filtri.</div>`;
   } else {
+    // Le mostre lunghe stanno nella vista "Mostre in corso"; nel calendario compaiono
+    // solo nel giorno in cui aprono, così una novità non sfugge.
+    const openings = evs.filter(e => isLong(e) && !e.hl && e.start >= today)
+                        .map(e => ({...e, opening:true}));
     const cal = evs.filter(e => !isLong(e) && !e.hl).map(e => e.start < today ? {...e, start:today} : e)
-                   .filter(e => e.start <= limit);
+                   .concat(openings)
+                   .filter(e => e.start <= limit)
+                   .sort((a,b) => a.start.localeCompare(b.start) || (a.time||"99").localeCompare(b.time||"99"));
+    const running = evs.filter(e => (e.cat==="mostre" || isLong(e)) && !e.hl && e.start <= today).length;
+    if(running) html += `<button class="more jump" id="jump">${running} ${running>1?"mostre in corso":"mostra in corso"} con questi filtri →</button>`;
     const slice = cal.slice(0, shown);
     let last = "";
     for(const e of slice){
@@ -210,10 +220,11 @@ function render(){
       html += card(e);
     }
     if(cal.length > shown) html += `<button class="more" id="more">Mostra altri ${cal.length-shown}</button>`;
-    if(!cal.length) html = `<div class="empty">Niente in calendario con questi filtri.<br>Prova ad allargare periodo o province.</div>`;
+    if(!cal.length) html += `<div class="empty">Niente in calendario con questi filtri.<br>Prova ad allargare periodo o province.</div>`;
   }
   $("#list").innerHTML = html;
   const m = $("#more"); if(m) m.onclick = () => { shown += 80; render() };
+  const j = $("#jump"); if(j) j.onclick = () => { st.view = "mostre"; save(); render(); scrollTo(0,0) };
 }
 
 function foot(){
