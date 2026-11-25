@@ -157,7 +157,6 @@ function card(e){
   const bits = [];
   if(e.time) bits.push(`<span class="time">${esc(e.time)}</span>`);
   if(where.length) bits.push(esc(where.join(", ")));
-  if(e.opening) bits.unshift(`<b>apertura</b>`);
   if(e.end) bits.push(`fino al ${fmtShort(e.end)}`);
   if(e.more) bits.push(`+${e.more} ${e.more>1?"date":"data"}`);
   if(e.price) bits.push(esc(e.price));
@@ -191,7 +190,7 @@ function render(){
 
   let html = "";
   if(st.view === "mostre"){
-    const ms = evs.filter(e => e.cat==="mostre" || isLong(e)).filter(e => !e.hl)
+    const ms = evs.filter(e => (e.cat==="mostre" && e.end) || isLong(e)).filter(e => !e.hl)
                   .sort((a,b) => (a.end||a.start).localeCompare(b.end||b.start));
     const now = ms.filter(e => e.start <= today), next = ms.filter(e => e.start > today)
                   .sort((a,b) => a.start.localeCompare(b.start));
@@ -199,15 +198,11 @@ function render(){
     if(next.length) html += `<div class="day">In arrivo</div>` + next.map(e => card({...e, venue:`dal ${fmtShort(e.start)}` + (e.venue?` · ${e.venue}`:"")})).join("");
     if(!ms.length) html = `<div class="empty">Nessuna mostra con questi filtri.</div>`;
   } else {
-    // Le mostre lunghe stanno nella vista "Mostre in corso"; nel calendario compaiono
-    // solo nel giorno in cui aprono, così una novità non sfugge.
-    const openings = evs.filter(e => isLong(e) && !e.hl && e.start >= today)
-                        .map(e => ({...e, opening:true}));
-    const cal = evs.filter(e => !isLong(e) && !e.hl).map(e => e.start < today ? {...e, start:today} : e)
-                   .concat(openings)
-                   .filter(e => e.start <= limit)
-                   .sort((a,b) => a.start.localeCompare(b.start) || (a.time||"99").localeCompare(b.time||"99"));
-    const running = evs.filter(e => (e.cat==="mostre" || isLong(e)) && !e.hl && e.start <= today).length;
+    // Mostre su più giorni ed eventi lunghi stanno solo nella vista "Mostre in corso"
+    const inTab = e => isLong(e) || (e.cat === "mostre" && e.end);
+    const cal = evs.filter(e => !inTab(e) && !e.hl).map(e => e.start < today ? {...e, start:today} : e)
+                   .filter(e => e.start <= limit);
+    const running = evs.filter(e => ((e.cat==="mostre" && e.end) || isLong(e)) && !e.hl && e.start <= today).length;
     if(running) html += `<button class="more jump" id="jump">${running} ${running>1?"mostre in corso":"mostra in corso"} con questi filtri →</button>`;
     const slice = cal.slice(0, shown);
     let last = "";
