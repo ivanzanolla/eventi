@@ -107,6 +107,21 @@ def test_belcircolo():
     assert evs[0].price.startswith("Interi € 20")
 
 
+def test_museibassano():
+    evs = fe.parse_museibassano((FX / "museibassano.html").read_text(), REF)
+    got = [(e.title[:40], e.start, e.end, e.venue) for e in evs]
+    assert got == [
+        ('Il Ritorno del "Cavallo Colossale" di An', "2026-12-12", "2027-03-12", "Museo Civico di Bassano del Grappa"),
+        ("Sebastião Salgado. Fotografie della Coll", "2026-10-24", "2027-04-04", "Museo Civico di Bassano del Grappa"),
+        ("Oltre i ricettari. Dietetica, ittiologia", "2026-10-30", "2027-02-20", "Biblioteca Civica"),
+    ], got
+    assert all(e.prov == "VI" and e.cat == MOSTRE for e in evs)
+    # stessa mostra dal Tacco di Bacco con sottotitolo diverso: una sola voce
+    tacco = fe.Event(title="Sebastião Salgado. Fotografie della collezione della Maison Européenne",
+                     cat=MOSTRE, start="2026-10-24", end="2027-04-04", url="t", src="il Tacco di Bacco")
+    assert len(fe.dedupe([evs[1], tacco])) == 1
+
+
 def test_dedupe_merges_highlight():
     a = fe.Event(title="A Ceremony of Carols", cat=CLASSICA, start="2026-12-21", url="u1", src="VDB",
                  town="Belluno", venue="Chiesa di Sargnano")

@@ -423,6 +423,66 @@ def fetch_belcircolo(http: Http, ref: date) -> list[Event]:
     return out
 
 
+_SMALL = {"di", "del", "della", "delle", "dei", "degli", "de", "la", "le", "il", "lo", "al", "alla", "e", "tra", "fra", "a", "in", "da", "dal", "con", "per", "su"}
+
+
+def _smart_case(t: str) -> str:
+    """'SEBASTIÃO SALGADO. FOTOGRAFIE DELLA COLLEZIONE' -> 'Sebastião Salgado. Fotografie della Collezione'."""
+    if t != t.upper():
+        return t
+    words = t.title().split(" ")
+    return " ".join(w.lower() if i and w.lower() in _SMALL else w for i, w in enumerate(words))
+
+
+def _dotted_date(s: str) -> date | None:
+    m = re.match(r"(\d{1,2})\.(\d{1,2})\.(\d{4})$", s.strip())
+    return date(int(m.group(3)), int(m.group(2)), int(m.group(1))) if m else None
+
+
+def parse_museibassano(page_html: str, ref: date) -> list[Event]:
+    """Mostre in corso/future dei Musei Civici di Bassano del Grappa.
+    Date nei formati '24.10.2026-4.4.2027', '30.10.2026―20.02.2027', 'Dal12dicembre2026'."""
+    soup = BeautifulSoup(page_html, "html.parser")
+    out = []
+    for c in soup.select(".portfolio-exhibition-item"):
+        link, title_el = c.select_one("a[href]"), c.select_one(".carousel-title")
+        dates = [clean(x.get_text(" ")) for x in c.select(".carousel-date-title")]
+        if not link or not title_el or not dates:
+            continue
+        raw = dates[0]
+        parts = re.split(r"\s*[-–―]\s*", raw)
+        start = _dotted_date(parts[0])
+        end = _dotted_date(parts[1]) if len(parts) > 1 else None
+        if start is None:
+            m = re.search(r"(\d{1,2})\s*([a-z]+)\s*(\d{4})", raw.lower())
+            if m and m.group(2) in MESI:
+                start = date(int(m.group(3)), MESI[m.group(2)], int(m.group(1)))
+        if start is None:
+            continue
+        if end is None:
+            # 'Dal 12 dicembre': nuova esposizione senza data di chiusura. La teniamo
+            # visibile per tre mesi; un allestimento permanente già aperto si salta.
+            if start < ref:
+                continue
+            end = start + timedelta(days=90)
+        if end < ref:
+            continue
+        title = _smart_case(clean(title_el.get_text(" ")))
+        img = c.select_one("img.desktop-image") or c.select_one("img")
+        out.append(Event(title=title, cat=MOSTRE, start=start.isoformat(), end=end.isoformat(),
+                         venue=dates[1] if len(dates) > 1 else None, town="Bassano del Grappa", prov="VI",
+                         url=link["href"], src="Musei di Bassano",
+                         img=img.get("src") if img else None))
+    return out
+
+
+def fetch_museibassano(http: Http, ref: date) -> list[Event]:
+    out = []
+    for path in ("in_corso", "future"):
+        out += parse_museibassano(http.get(f"https://www.museibassano.it/it/mostre/{path}").text, ref)
+    return out
+
+
 SOURCES = [
     ("Visit Dolomiti Bellunesi", "https://www.visitdolomitibellunesi.com/it/eventi/calendario-eventi", fetch_visitdolomitibellunesi),
     ("Dolomiti Prealpi", "https://www.dolomitiprealpi.it/eventi/", fetch_dolomitiprealpi),
@@ -430,6 +490,7 @@ SOURCES = [
     ("il Tacco di Bacco", "https://iltaccodibacco.it/veneto/", fetch_tacco),
     ("Teatro La Fenice", "https://www.teatrolafenice.it/calendario/", fetch_fenice),
     ("Circolo Culturale Bellunese", "https://belcircolo.org/programma/", fetch_belcircolo),
+    ("Musei di Bassano", "https://www.museibassano.it/it/mostre/in_corso", fetch_museibassano),
     ("Turismo FVG", "https://www.turismofvg.it/eventi/musica", fetch_turismofvg),
 ]
 
@@ -451,7 +512,9 @@ def dedupe(events: list[Event]) -> list[Event]:
 
     best: dict[str, Event] = {}
     for e in events:
-        key = f"{norm(re.sub(r'^.*? \| ', '', e.title))}|{e.start}"
+        t = norm(re.sub(r'^.*? \| ', '', e.title))
+        # Le mostre cambiano sottotitolo da una fonte all'altra: bastano le prime parole
+        key = f"{t[:20] if e.cat == MOSTRE else t}|{e.start}"
         cur = best.get(key)
         if cur is None:
             best[key] = e
