@@ -122,6 +122,17 @@ def test_museibassano():
     assert len(fe.dedupe([evs[1], tacco])) == 1
 
 
+def test_mart():
+    evs = fe.parse_mart((FX / "mart.html").read_text(), REF)
+    got = [(e.title, e.start, e.end, e.venue, e.town, e.prov) for e in evs]
+    assert got == [
+        ("Water Flow. Acqua, arte, scienza, umanità", "2026-10-10", "2027-06-06", "Palazzo delle Albere", "Trento", "TN"),
+        ("Gianni Berengo Gardin. Mondi da abitare", "2026-10-24", "2027-02-14", "Mart Rovereto", "Rovereto", "TN"),
+        ("Walter Moroder. Presënza", "2026-12-05", "2027-03-29", "Galleria Civica Trento", "Trento", "TN"),
+    ], got
+    assert all(e.cat == MOSTRE and e.url.startswith("https://www.mart.tn.it/mostre/") for e in evs)
+
+
 def test_dedupe_merges_highlight():
     a = fe.Event(title="A Ceremony of Carols", cat=CLASSICA, start="2026-12-21", url="u1", src="VDB",
                  town="Belluno", venue="Chiesa di Sargnano")

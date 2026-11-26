@@ -483,6 +483,77 @@ def fetch_museibassano(http: Http, ref: date) -> list[Event]:
     return out
 
 
+MART_VENUES = {  # sede -> comune
+    "Mart Rovereto": "Rovereto",
+    "Casa d'Arte Futurista Depero": "Rovereto",
+    "Palazzo delle Albere": "Trento",
+    "Galleria Civica": "Trento",
+}
+_MART_DATE = re.compile(r"(\d{1,2})\s+([a-zà]{3})\s+(\d{4})", re.I)
+
+
+def _mart_dates(text: str) -> list[date]:
+    out = []
+    for d, m, y in _MART_DATE.findall(text):
+        if m.upper() in MESI_ABBR:
+            out.append(date(int(y), MESI_ABBR[m.upper()], int(d)))
+    return out
+
+
+def parse_mart(page_html: str, ref: date) -> list[Event]:
+    """Mostre del Mart (Rovereto e sedi di Trento) dall'elenco di /mostre-eventi.
+    Fuori dal Veneto, ma richiesto a mano. L'HTML è Next.js server-side: le card sono
+    <a href="/mostre/..."> con titolo in un heading; la data ('da sabato 24 ott 2026 |
+    a domenica 14 feb 2027 Mart Rovereto') segue la card. Si legge per ordine di
+    documento, senza dipendere dalle classi CSS. Workshop e 'Altro' si saltano."""
+    base = "https://www.mart.tn.it"
+    soup = BeautifulSoup(page_html, "html.parser")
+    cards = []   # (link, titolo, testo che segue fino alla card successiva)
+    for a in soup.select('a[href^="/mostre/"]'):
+        h = a.find(re.compile(r"^h[1-6]$"))
+        if h and clean(h.get_text(" ")):
+            cards.append([a, clean(h.get_text(" ")), [], h])
+    for i, c in enumerate(cards):
+        nxt = cards[i + 1][0] if i + 1 < len(cards) else None
+        for el in c[3].next_elements:
+            if el is nxt:
+                break
+            if isinstance(el, str) and c[3] not in el.parents and el.strip():
+                c[2].append(el.strip())
+            if len(c[2]) > 40:
+                break
+    out, seen = [], set()
+    for a, title, after, _h in cards:
+        label = clean(a.get_text(" "))
+        m = re.search(r"\bin:\s*(.+)$", label.replace(title, " "), re.I)
+        if m and "mostr" not in m.group(1).lower():
+            continue
+        if a["href"] in seen:
+            continue
+        seen.add(a["href"])
+        tail = clean(" ".join(after))[:160]
+        dates = _mart_dates(tail)
+        if not dates:
+            continue
+        start, end = dates[0], dates[1] if len(dates) > 1 else None
+        if (end or start) < ref or (end is None and start < ref):
+            continue
+        after_dates = tail[list(_MART_DATE.finditer(tail))[min(len(dates), 2) - 1].end():].strip().lower()
+        venue = next((v for v in MART_VENUES if after_dates.startswith(v.lower())), None)
+        town = MART_VENUES.get(venue, "Rovereto")
+        img = a.select_one("img")
+        out.append(Event(title=title, cat=MOSTRE, start=start.isoformat(),
+                         end=end.isoformat() if end else None,
+                         venue={"Galleria Civica": "Galleria Civica Trento"}.get(venue, venue),
+                         town=town, prov="TN", url=base + a["href"], src="Mart Rovereto",
+                         img=(base + img["src"] if img and img.get("src", "").startswith("/") else (img.get("src") if img else None))))
+    return out
+
+
+def fetch_mart(http: Http, ref: date) -> list[Event]:
+    return parse_mart(http.get("https://www.mart.tn.it/mostre-eventi/mostre-ed-eventi-118152").text, ref)
+
+
 SOURCES = [
     ("Visit Dolomiti Bellunesi", "https://www.visitdolomitibellunesi.com/it/eventi/calendario-eventi", fetch_visitdolomitibellunesi),
     ("Dolomiti Prealpi", "https://www.dolomitiprealpi.it/eventi/", fetch_dolomitiprealpi),
@@ -492,6 +563,7 @@ SOURCES = [
     ("Circolo Culturale Bellunese", "https://belcircolo.org/programma/", fetch_belcircolo),
     ("Musei di Bassano", "https://www.museibassano.it/it/mostre/in_corso", fetch_museibassano),
     ("Turismo FVG", "https://www.turismofvg.it/eventi/musica", fetch_turismofvg),
+    ("Mart Rovereto", "https://www.mart.tn.it/mostre-eventi", fetch_mart),  # fuori regione (Trentino), richiesta esplicita
 ]
 
 # Fonti utili senza dati scaricabili: compaiono come link nella pagina
