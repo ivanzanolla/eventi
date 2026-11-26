@@ -44,6 +44,6 @@ jobs:
             echo "Nessuna novità"
           else
             git commit -m "Eventi aggiornati $(TZ=Europe/Rome date +'%Y-%m-%d %H:%M')"
-            git pull --rebase --autostash origin main
+            git pull --rebase -X theirs origin main  # in caso di conflitto su events.json vince il file appena scaricato
             git push
           fi
