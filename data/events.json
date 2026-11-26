@@ -1,5 +1,5 @@
 {
-"generated": "2026-11-26T14:57+01:00",
+"generated": "2026-11-26T18:48+01:00",
 "sources": [
 {
 "name": "Visit Dolomiti Bellunesi",
@@ -48,6 +48,12 @@
 "url": "https://www.turismofvg.it/eventi/musica",
 "ok": true,
 "count": 11
+},
+{
+"name": "Mart Rovereto",
+"url": "https://www.mart.tn.it/mostre-eventi",
+"ok": true,
+"count": 0
 }
 ],
 "links": [
