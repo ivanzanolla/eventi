@@ -127,7 +127,10 @@ def test_mart():
     got = [(e.title, e.start, e.end, e.venue, e.town, e.prov) for e in evs]
     assert got == [
         ("Water Flow. Acqua, arte, scienza, umanità", "2026-10-10", "2027-06-06", "Palazzo delle Albere", "Trento", "TN"),
+        ("Il Gruppo 7 e la nascita del Razionalismo italiano", "2026-10-23", "2027-01-17", "Mart Rovereto", "Rovereto", "TN"),
         ("Gianni Berengo Gardin. Mondi da abitare", "2026-10-24", "2027-02-14", "Mart Rovereto", "Rovereto", "TN"),
+        ("Fronti opposti. Arte italiana tra Guttuso e Vedova", "2026-11-28", "2027-04-04", "Mart Rovereto", "Rovereto", "TN"),
+        ("Marta Spagnoli. Fotofinish", "2026-12-05", "2027-03-29", "Galleria Civica Trento", "Trento", "TN"),
         ("Walter Moroder. Presënza", "2026-12-05", "2027-03-29", "Galleria Civica Trento", "Trento", "TN"),
     ], got
     assert all(e.cat == MOSTRE and e.url.startswith("https://www.mart.tn.it/mostre/") for e in evs)

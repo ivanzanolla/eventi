@@ -483,70 +483,44 @@ def fetch_museibassano(http: Http, ref: date) -> list[Event]:
     return out
 
 
-MART_VENUES = {  # sede -> comune
-    "Mart Rovereto": "Rovereto",
-    "Casa d'Arte Futurista Depero": "Rovereto",
-    "Palazzo delle Albere": "Trento",
-    "Galleria Civica": "Trento",
-}
-_MART_DATE = re.compile(r"(\d{1,2})\s+([a-zà]{3})\s+(\d{4})", re.I)
-
-
-def _mart_dates(text: str) -> list[date]:
-    out = []
-    for d, m, y in _MART_DATE.findall(text):
-        if m.upper() in MESI_ABBR:
-            out.append(date(int(y), MESI_ABBR[m.upper()], int(d)))
-    return out
+MART_TOWNS = {"Mart Rovereto": "Rovereto", "Casa d'Arte Futurista Depero": "Rovereto",
+              "Palazzo delle Albere": "Trento", "Galleria Civica Trento": "Trento"}
 
 
 def parse_mart(page_html: str, ref: date) -> list[Event]:
-    """Mostre del Mart (Rovereto e sedi di Trento) dall'elenco di /mostre-eventi.
-    Fuori dal Veneto, ma richiesto a mano. L'HTML è Next.js server-side: le card sono
-    <a href="/mostre/..."> con titolo in un heading; la data ('da sabato 24 ott 2026 |
-    a domenica 14 feb 2027 Mart Rovereto') segue la card. Si legge per ordine di
-    documento, senza dipendere dalle classi CSS. Workshop e 'Altro' si saltano."""
+    """Mostre del Mart (Rovereto e sedi di Trento) da /mostre-eventi. Fuori dal Veneto,
+    ma richiesto a mano. Il sito è Next.js: l'elenco sta nel JSON __NEXT_DATA__
+    (contentType "mostra", dataDiApertura/dataDiChiusura, sede). Workshop e "Altro"
+    (campo tipologia) si saltano; le mostre permanenti senza chiusura (Le Collezioni) pure."""
     base = "https://www.mart.tn.it"
-    soup = BeautifulSoup(page_html, "html.parser")
-    cards = []   # (link, titolo, testo che segue fino alla card successiva)
-    for a in soup.select('a[href^="/mostre/"]'):
-        h = a.find(re.compile(r"^h[1-6]$"))
-        if h and clean(h.get_text(" ")):
-            cards.append([a, clean(h.get_text(" ")), [], h])
-    for i, c in enumerate(cards):
-        nxt = cards[i + 1][0] if i + 1 < len(cards) else None
-        for el in c[3].next_elements:
-            if el is nxt:
-                break
-            if isinstance(el, str) and c[3] not in el.parents and el.strip():
-                c[2].append(el.strip())
-            if len(c[2]) > 40:
-                break
-    out, seen = [], set()
-    for a, title, after, _h in cards:
-        label = clean(a.get_text(" "))
-        m = re.search(r"\bin:\s*(.+)$", label.replace(title, " "), re.I)
-        if m and "mostr" not in m.group(1).lower():
+    m = re.search(r'<script id="__NEXT_DATA__"[^>]*>(.*?)</script>', page_html, re.S)
+    if not m:
+        raise ValueError("__NEXT_DATA__ non trovato: struttura del sito cambiata?")
+    found: dict = {}
+
+    def walk(o):
+        if isinstance(o, dict):
+            if o.get("contentType") == "mostra" and o.get("url") and o.get("titolo"):
+                found[o["url"]] = o
+            for v in o.values():
+                walk(v)
+        elif isinstance(o, list):
+            for v in o:
+                walk(v)
+
+    walk(json.loads(m.group(1)))
+    out = []
+    for o in found.values():
+        if (o.get("tipologia") or "Mostra").lower() != "mostra":
             continue
-        if a["href"] in seen:
+        start, end = (o.get("dataDiApertura") or "")[:10], (o.get("dataDiChiusura") or "")[:10]
+        if not start or not end or end < ref.isoformat():
             continue
-        seen.add(a["href"])
-        tail = clean(" ".join(after))[:160]
-        dates = _mart_dates(tail)
-        if not dates:
-            continue
-        start, end = dates[0], dates[1] if len(dates) > 1 else None
-        if (end or start) < ref or (end is None and start < ref):
-            continue
-        after_dates = tail[list(_MART_DATE.finditer(tail))[min(len(dates), 2) - 1].end():].strip().lower()
-        venue = next((v for v in MART_VENUES if after_dates.startswith(v.lower())), None)
-        town = MART_VENUES.get(venue, "Rovereto")
-        img = a.select_one("img")
-        out.append(Event(title=title, cat=MOSTRE, start=start.isoformat(),
-                         end=end.isoformat() if end else None,
-                         venue={"Galleria Civica": "Galleria Civica Trento"}.get(venue, venue),
-                         town=town, prov="TN", url=base + a["href"], src="Mart Rovereto",
-                         img=(base + img["src"] if img and img.get("src", "").startswith("/") else (img.get("src") if img else None))))
+        venue = clean(o.get("sede")) or None
+        out.append(Event(title=clean(o["titolo"]), cat=MOSTRE, start=start, end=end, venue=venue,
+                         town=MART_TOWNS.get(venue or "", "Rovereto"), prov="TN",
+                         url=base + o["url"], src="Mart Rovereto", img=o.get("ogImageUrl") or None))
+    out.sort(key=lambda e: (e.start, e.title))
     return out
 
 
