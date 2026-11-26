@@ -62,6 +62,7 @@ _RAW = {
         Passariano, Villa Manin""",
     "GO": """Gorizia, Monfalcone, Grado, Gradisca d'Isonzo, Staranzano, Cormons""",
     "TS": """Trieste, Muggia, Duino Aurisina, Duino""",
+    "TN": """Trento, Rovereto""",  # solo per il Mart (fuori regione)
 }
 
 VENETO = {"BL", "TV", "VE", "PD", "VI", "VR", "RO"}
@@ -71,7 +72,7 @@ FVG = {"PN", "UD", "GO", "TS"}
 PROVINCE_NAMES = {
     "belluno": "BL", "treviso": "TV", "venezia": "VE", "padova": "PD", "vicenza": "VI",
     "verona": "VR", "rovigo": "RO", "pordenone": "PN", "udine": "UD", "gorizia": "GO",
-    "trieste": "TS",
+    "trieste": "TS", "trento": "TN",
 }
 
 
@@ -94,7 +95,7 @@ def province_of(town: str | None, fallback: str | None = None) -> str | None:
     """Sigla della provincia di un comune; prova anche il primo pezzo di 'A, B' e '(XX)'."""
     if not town:
         return fallback
-    m = re.search(r"\((BL|TV|VE|PD|VI|VR|RO|PN|UD|GO|TS)\)", town)
+    m = re.search(r"\((BL|TV|VE|PD|VI|VR|RO|PN|UD|GO|TS|TN)\)", town)
     if m:
         return m.group(1)
     for cand in [town] + re.split(r"[,/;-]", town):

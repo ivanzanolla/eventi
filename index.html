@@ -105,16 +105,20 @@ const CATS = [
 ];
 const PROVS = [
   ["BL","Belluno"],["TV","Treviso"],["VE","Venezia"],["PN","Pordenone"],
-  ["VEN","Resto del Veneto"],["FVG","Resto del FVG"],
+  ["VEN","Resto del Veneto"],["FVG","Resto del FVG"],["TN","Trentino (Mart)"],
 ];
 const VENETO_ALTRO = new Set(["PD","VI","VR","RO","VEN"]);
 const FVG_ALTRO = new Set(["UD","GO","TS","FVG"]);
-const DEF = {view:"cal", cats:["classica","mostre","visite"], provs:["BL","TV","VE","PN"], span:"30", q:""};
+const DEF = {v:2, view:"cal", cats:["classica","mostre","visite"], provs:["BL","TV","VE","PN","TN"], span:"30", q:""};
 const LONG_DAYS = 6;   // un evento più lungo di così è una "mostra in corso", non sta nel calendario
 
 let st = load(), DATA = null, shown = 60;
 
-function load(){ try{ return {...DEF, ...JSON.parse(localStorage.getItem("eventi-filtri")||"{}"), q:""} }catch{ return {...DEF} } }
+function load(){ try{
+  const saved = JSON.parse(localStorage.getItem("eventi-filtri")||"{}"), o = {...DEF, ...saved, q:""};
+  if(saved.v !== 2) o.provs = [...new Set([...o.provs, "TN"])];  // migrazione: chip Trentino (Mart) attivo di default
+  o.v = 2; return o;
+}catch{ return {...DEF} } }
 function save(){ try{ localStorage.setItem("eventi-filtri", JSON.stringify({...st, q:""})) }catch{} }
 
 const $ = s => document.querySelector(s);

@@ -20,6 +20,7 @@ Gruppo Vocale **Crystal Tears** sono sempre in cima, qualunque filtro sia attivo
 | Musei di Bassano | mostre temporanee dei Musei Civici di Bassano del Grappa | pagine mostre in corso e future |
 | Circolo Culturale Bellunese | stagione concertistica di Belluno | pagine categoria (Classica, Matinée, Luglio al Borgo) |
 | Turismo FVG | musica classica e mostre in Friuli | pagine elenco |
+| Mart Rovereto | mostre del Mart (Rovereto e sedi di Trento): unica fonte fuori da Veneto/FVG, chip "Trentino (Mart)" | HTML di `/mostre-eventi` |
 
 Fonti senza dati scaricabili, linkate in fondo alla pagina: TrevisoToday (blocca i client automatici),
 Adorable Belluno (stessi dati di Visit Dolomiti Bellunesi), Instagram di Crystal Tears (richiede login).

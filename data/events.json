@@ -1,5 +1,5 @@
 {
-"generated": "2026-11-26T14:57+01:00",
+"generated": "2026-11-26T18:55+01:00",
 "sources": [
 {
 "name": "Visit Dolomiti Bellunesi",
@@ -48,6 +48,12 @@
 "url": "https://www.turismofvg.it/eventi/musica",
 "ok": true,
 "count": 11
+},
+{
+"name": "Mart Rovereto",
+"url": "https://www.mart.tn.it/mostre-eventi",
+"ok": true,
+"count": 6
 }
 ],
 "links": [
@@ -92,6 +98,19 @@
 "id": "72c89615ce"
 },
 {
+"title": "Water Flow. Acqua, arte, scienza, umanità",
+"cat": "mostre",
+"start": "2026-10-10",
+"url": "https://www.mart.tn.it/mostre/water-flow-acqua-arte-scienza-umanita-162369",
+"src": "Mart Rovereto",
+"end": "2027-06-06",
+"venue": "Palazzo delle Albere",
+"town": "Trento",
+"prov": "TN",
+"img": "https://media.mart.tn.it/media/lgxnywrz/the-raft-bill-viola.png",
+"id": "8d1a3277de"
+},
+{
 "title": "Per filo, per segno. Dall'ingegno di Luciano Savio ai manifesti del '900",
 "cat": "mostre",
 "start": "2026-10-17",
@@ -103,6 +122,32 @@
 "prov": "PN",
 "img": "https://iltaccodibacco.it/img_eventi/2026/10/333540_20261014_171603.jpg",
 "id": "cd838767cb"
+},
+{
+"title": "Il Gruppo 7 e la nascita del Razionalismo italiano",
+"cat": "mostre",
+"start": "2026-10-23",
+"url": "https://www.mart.tn.it/mostre/il-gruppo-7-e-la-nascita-del-razionalismo-italiano-160143",
+"src": "Mart Rovereto",
+"end": "2027-01-17",
+"venue": "Mart Rovereto",
+"town": "Rovereto",
+"prov": "TN",
+"img": "https://media.mart.tn.it/media/mcxgzo0s/libera-grande.jpg",
+"id": "2144917c9b"
+},
+{
+"title": "Gianni Berengo Gardin. Mondi da abitare",
+"cat": "mostre",
+"start": "2026-10-24",
+"url": "https://www.mart.tn.it/mostre/gianni-berengo-gardin-mondi-da-abitare-162260",
+"src": "Mart Rovereto",
+"end": "2027-02-14",
+"venue": "Mart Rovereto",
+"town": "Rovereto",
+"prov": "TN",
+"img": "https://media.mart.tn.it/media/n5rbr3he/2_parigi-1989.jpg",
+"id": "dd2179cfd7"
 },
 {
 "title": "Sebastião Salgado. Fotografie della collezione della Maison Européenne de la Photographie",
@@ -427,6 +472,19 @@
 "town": "Muggia",
 "prov": "TS",
 "id": "469d26ff3c"
+},
+{
+"title": "Fronti opposti. Arte italiana tra Guttuso e Vedova",
+"cat": "mostre",
+"start": "2026-11-28",
+"url": "https://www.mart.tn.it/mostre/fronti-opposti-arte-italiana-tra-guttuso-e-vedova-161982",
+"src": "Mart Rovereto",
+"end": "2027-04-04",
+"venue": "Mart Rovereto",
+"town": "Rovereto",
+"prov": "TN",
+"img": "https://media.mart.tn.it/media/dk5lvtfe/guttuso-le-donne-degli-zolfatari-di-lercara-durante-uno-sciopero-le-donne-dei-minatori-vaf-2113.png",
+"id": "ce12e596f8"
 },
 {
 "title": "Il Parco di Villa Cittadella Vigodarzere",
@@ -928,6 +986,19 @@
 "id": "c4ec79142a"
 },
 {
+"title": "Marta Spagnoli. Fotofinish",
+"cat": "mostre",
+"start": "2026-12-05",
+"url": "https://www.mart.tn.it/mostre/marta-spagnoli-fotofinish-160123",
+"src": "Mart Rovereto",
+"end": "2027-03-29",
+"venue": "Galleria Civica Trento",
+"town": "Trento",
+"prov": "TN",
+"img": "https://media.mart.tn.it/media/ve4oqf3v/marta-spagnoli-fotofinish-i-2026-acrilico-e-olio-su-tela-180-x-250-cm-matteo-losurdo.jpg",
+"id": "eb58e51a9d"
+},
+{
 "title": "PALAZZO MONTANARI E LE COLLINE DELLA VALPOLICELLA",
 "cat": "visite",
 "start": "2026-12-05",
@@ -999,6 +1070,19 @@
 "prov": "BL",
 "img": "https://www.visitdolomitibellunesi.com/imports/images/event/visite-guidate-ex-villaggio-eni-1eab5eb9-48f8-4ea7-9ba8-d1f30eacdc1f/124136/image-thumb__124136__thumb500/images-trn-1-4cd2cacd-ebfb-404a-a1a1-cca9039bc2c0-99-image.jpg",
 "id": "4fb6b9a534"
+},
+{
+"title": "Walter Moroder. Presënza",
+"cat": "mostre",
+"start": "2026-12-05",
+"url": "https://www.mart.tn.it/mostre/walter-moroder-presenza-162611",
+"src": "Mart Rovereto",
+"end": "2027-03-29",
+"venue": "Galleria Civica Trento",
+"town": "Trento",
+"prov": "TN",
+"img": "https://media.mart.tn.it/media/jhidid10/fra_hq-gdg-waltermoroderondes-tiberio-sorvillob0052772.jpg",
+"id": "b81eefc72d"
 },
 {
 "title": "Concerto diretto da Alevtina Ioffe",

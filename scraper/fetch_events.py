@@ -483,6 +483,51 @@ def fetch_museibassano(http: Http, ref: date) -> list[Event]:
     return out
 
 
+MART_TOWNS = {"Mart Rovereto": "Rovereto", "Casa d'Arte Futurista Depero": "Rovereto",
+              "Palazzo delle Albere": "Trento", "Galleria Civica Trento": "Trento"}
+
+
+def parse_mart(page_html: str, ref: date) -> list[Event]:
+    """Mostre del Mart (Rovereto e sedi di Trento) da /mostre-eventi. Fuori dal Veneto,
+    ma richiesto a mano. Il sito è Next.js: l'elenco sta nel JSON __NEXT_DATA__
+    (contentType "mostra", dataDiApertura/dataDiChiusura, sede). Workshop e "Altro"
+    (campo tipologia) si saltano; le mostre permanenti senza chiusura (Le Collezioni) pure."""
+    base = "https://www.mart.tn.it"
+    m = re.search(r'<script id="__NEXT_DATA__"[^>]*>(.*?)</script>', page_html, re.S)
+    if not m:
+        raise ValueError("__NEXT_DATA__ non trovato: struttura del sito cambiata?")
+    found: dict = {}
+
+    def walk(o):
+        if isinstance(o, dict):
+            if o.get("contentType") == "mostra" and o.get("url") and o.get("titolo"):
+                found[o["url"]] = o
+            for v in o.values():
+                walk(v)
+        elif isinstance(o, list):
+            for v in o:
+                walk(v)
+
+    walk(json.loads(m.group(1)))
+    out = []
+    for o in found.values():
+        if (o.get("tipologia") or "Mostra").lower() != "mostra":
+            continue
+        start, end = (o.get("dataDiApertura") or "")[:10], (o.get("dataDiChiusura") or "")[:10]
+        if not start or not end or end < ref.isoformat():
+            continue
+        venue = clean(o.get("sede")) or None
+        out.append(Event(title=clean(o["titolo"]), cat=MOSTRE, start=start, end=end, venue=venue,
+                         town=MART_TOWNS.get(venue or "", "Rovereto"), prov="TN",
+                         url=base + o["url"], src="Mart Rovereto", img=o.get("ogImageUrl") or None))
+    out.sort(key=lambda e: (e.start, e.title))
+    return out
+
+
+def fetch_mart(http: Http, ref: date) -> list[Event]:
+    return parse_mart(http.get("https://www.mart.tn.it/mostre-eventi/mostre-ed-eventi-118152").text, ref)
+
+
 SOURCES = [
     ("Visit Dolomiti Bellunesi", "https://www.visitdolomitibellunesi.com/it/eventi/calendario-eventi", fetch_visitdolomitibellunesi),
     ("Dolomiti Prealpi", "https://www.dolomitiprealpi.it/eventi/", fetch_dolomitiprealpi),
@@ -492,6 +537,7 @@ SOURCES = [
     ("Circolo Culturale Bellunese", "https://belcircolo.org/programma/", fetch_belcircolo),
     ("Musei di Bassano", "https://www.museibassano.it/it/mostre/in_corso", fetch_museibassano),
     ("Turismo FVG", "https://www.turismofvg.it/eventi/musica", fetch_turismofvg),
+    ("Mart Rovereto", "https://www.mart.tn.it/mostre-eventi", fetch_mart),  # fuori regione (Trentino), richiesta esplicita
 ]
 
 # Fonti utili senza dati scaricabili: compaiono come link nella pagina
