@@ -1,11 +1,11 @@
 {
-"generated": "2026-11-25T15:26+01:00",
+"generated": "2026-11-26T14:57+01:00",
 "sources": [
 {
 "name": "Visit Dolomiti Bellunesi",
 "url": "https://www.visitdolomitibellunesi.com/it/eventi/calendario-eventi",
 "ok": true,
-"count": 33
+"count": 35
 },
 {
 "name": "Dolomiti Prealpi",
@@ -17,19 +17,19 @@
 "name": "Veneto Segreto",
 "url": "https://venetosegreto.com/eventi/",
 "ok": true,
-"count": 62
+"count": 65
 },
 {
 "name": "il Tacco di Bacco",
 "url": "https://iltaccodibacco.it/veneto/",
 "ok": true,
-"count": 64
+"count": 69
 },
 {
 "name": "Teatro La Fenice",
 "url": "https://www.teatrolafenice.it/calendario/",
 "ok": true,
-"count": 92
+"count": 93
 },
 {
 "name": "Circolo Culturale Bellunese",
@@ -47,7 +47,7 @@
 "name": "Turismo FVG",
 "url": "https://www.turismofvg.it/eventi/musica",
 "ok": true,
-"count": 15
+"count": 11
 }
 ],
 "links": [
@@ -246,46 +246,6 @@
 "prov": "VR",
 "img": "https://iltaccodibacco.it/img_eventi/2026/11/337070_20261119_073816.jpg",
 "id": "f1aed46e50"
-},
-{
-"title": "Aspettando il Natale: Sinfonia di Talenti - 2° Edizione",
-"cat": "classica",
-"start": "2026-11-25",
-"url": "https://www.turismofvg.it/eventi/aspettando-il-natale-sinfonia-di-talenti-2-edizione",
-"src": "Turismo FVG",
-"town": "Palmanova",
-"prov": "UD",
-"id": "ff7680bcc2"
-},
-{
-"title": "Coro di Ruda - Genesi",
-"cat": "classica",
-"start": "2026-11-25",
-"url": "https://www.turismofvg.it/eventi/coro-di-ruda-genesi",
-"src": "Turismo FVG",
-"town": "Cervignano del Friuli",
-"prov": "UD",
-"id": "a6a9f172e4"
-},
-{
-"title": "L'Universo femminile, volti e colori",
-"cat": "mostre",
-"start": "2026-11-25",
-"url": "https://www.turismofvg.it/eventi/l-universo-femminile-volti-e-colori",
-"src": "Turismo FVG",
-"town": "Aiello del Friuli",
-"prov": "FVG",
-"id": "2145c72f6f"
-},
-{
-"title": "Teatro Miela - Quartetto Škampa",
-"cat": "classica",
-"start": "2026-11-25",
-"url": "https://www.turismofvg.it/eventi/teatro-miela-quartetto-skampa",
-"src": "Turismo FVG",
-"town": "Trieste",
-"prov": "TS",
-"id": "fb15af5784"
 },
 {
 "title": "Ermanno Wolf-Ferrari 150",
@@ -625,6 +585,18 @@
 "id": "07f9652dd1"
 },
 {
+"title": "Aperitivo in musica al Caffè Tiziano",
+"cat": "concerti",
+"start": "2026-11-29",
+"url": "https://www.visitdolomitibellunesi.com/it/eventi/aperitivo-in-musica-al-caffe-tiziano?day=2026-11-29",
+"src": "Visit Dolomiti Bellunesi",
+"venue": "Caffè Tiziano",
+"town": "Pieve di Cadore",
+"prov": "BL",
+"img": "https://www.visitdolomitibellunesi.com/imports/images/event/aperitivo-in-musica-al-caff-tiziano-9c6c1550-c518-4b6b-a633-6109689bc9a1/124143/image-thumb__124143__thumb500/images-trn-1-d5767fe6-4fa1-4479-ac0c-a8ea5b94ab68-99-image.jpg",
+"id": "68645a923f"
+},
+{
 "title": "Aperture 2026 e visita guidata al Mulino di Santa Libera",
 "cat": "visite",
 "start": "2026-11-29",
@@ -645,6 +617,19 @@
 "town": "Gorizia",
 "prov": "GO",
 "id": "185a4a78c6"
+},
+{
+"title": "Human Atlas – Due secoli di fotografia dalla collezione Mario Trevisan",
+"cat": "mostre",
+"start": "2026-11-29",
+"url": "https://iltaccodibacco.it/veneto/eventi/338165.html",
+"src": "il Tacco di Bacco",
+"end": "2027-02-28",
+"venue": "Casa Robegan Treviso",
+"town": "Treviso",
+"prov": "TV",
+"img": "https://iltaccodibacco.it/img_eventi/2026/11/338165_20261126_133331.jpg",
+"id": "580469eaac"
 },
 {
 "title": "Il Primo Ecomuseo Agricolo Verticale d’Europa",
@@ -694,6 +679,7 @@
 "prov": "VI",
 "img": "https://mio.venetosegreto.com/storage/events/thumbs/0f9b4a54f333d20c5f76693d01666b8b.webp",
 "price": "15€",
+"more": 1,
 "id": "3a7b34a055"
 },
 {
@@ -930,6 +916,18 @@
 "id": "b6ee990fb6"
 },
 {
+"title": "La Madonna dell’Orto e le Meraviglie Nascoste di Venezia",
+"cat": "visite",
+"start": "2026-12-05",
+"url": "https://venetosegreto.com/evento/la-madonna-dell-orto-e-le-meraviglie-nascoste-di-venezia/",
+"src": "Veneto Segreto",
+"venue": "Chiese ed abbazie",
+"prov": "VE",
+"img": "https://mio.venetosegreto.com/storage/events/thumbs/bd0005013cb43f92f8b21a30211b94ab.webp",
+"price": "17€",
+"id": "c4ec79142a"
+},
+{
 "title": "PALAZZO MONTANARI E LE COLLINE DELLA VALPOLICELLA",
 "cat": "visite",
 "start": "2026-12-05",
@@ -988,6 +986,19 @@
 "prov": "BL",
 "img": "https://www.visitdolomitibellunesi.com/imports/images/event/violin-in-the-night-d5fdf36d-be9b-481d-9816-6a61a3b6be65/123696/image-thumb__123696__thumb500/images-trn-1-1a330b02-16f6-4b13-a8fe-0ffde5166430-99-image.jpg",
 "id": "5cff9e92af"
+},
+{
+"title": "Visite guidate Ex Villaggio Eni",
+"cat": "visite",
+"start": "2026-12-05",
+"url": "https://www.visitdolomitibellunesi.com/it/eventi/visite-guidate-ex-villaggio-eni",
+"src": "Visit Dolomiti Bellunesi",
+"end": "2027-03-06",
+"venue": "Ex Villaggio Eni",
+"town": "Borca di Cadore",
+"prov": "BL",
+"img": "https://www.visitdolomitibellunesi.com/imports/images/event/visite-guidate-ex-villaggio-eni-1eab5eb9-48f8-4ea7-9ba8-d1f30eacdc1f/124136/image-thumb__124136__thumb500/images-trn-1-4cd2cacd-ebfb-404a-a1a1-cca9039bc2c0-99-image.jpg",
+"id": "4fb6b9a534"
 },
 {
 "title": "Concerto diretto da Alevtina Ioffe",
@@ -1292,6 +1303,18 @@
 "id": "3c69c4d248"
 },
 {
+"title": "Sulle tracce delle porte fatate di Verona",
+"cat": "visite",
+"start": "2026-12-12",
+"url": "https://venetosegreto.com/evento/sulle-tracce-delle-porte-fatate-di-verona/",
+"src": "Veneto Segreto",
+"venue": "Città e borghi",
+"prov": "VR",
+"img": "https://mio.venetosegreto.com/storage/events/thumbs/b9e4c1ebcc325f17dbb951978501dfda.webp",
+"price": "15€",
+"id": "c344b865fc"
+},
+{
 "title": "Vespri in Cattedrale con Raffaele Capozzi e Kevin Franceschetti",
 "cat": "classica",
 "start": "2026-12-12",
@@ -1385,6 +1408,7 @@
 "prov": "PD",
 "img": "https://mio.venetosegreto.com/storage/events/thumbs/e2ead77da0d6c3219a4f8fc1d2d21130.webp",
 "price": "19€",
+"more": 1,
 "id": "ad08cf7bb6"
 },
 {
@@ -1665,6 +1689,18 @@
 "img": "https://mio.venetosegreto.com/storage/events/thumbs/527c84a8e009a4e6fd815e0d1c16feca.webp",
 "price": "15€",
 "id": "dbaeb3890b"
+},
+{
+"title": "Palazzo della Ragione e le sue piazze",
+"cat": "visite",
+"start": "2026-12-20",
+"url": "https://venetosegreto.com/evento/palazzo-della-ragione-e-le-sue-piazze/",
+"src": "Veneto Segreto",
+"venue": "Musei",
+"prov": "PD",
+"img": "https://mio.venetosegreto.com/storage/events/thumbs/1b8ed7744a94a19d831b251b7a8a1e19.webp",
+"price": "17€",
+"id": "7613fd89f2"
 },
 {
 "title": "VISITA GUIDATA ALLA BASILICA DELLA MADONNA DELLA SALUTE (VE)",
@@ -2217,6 +2253,19 @@
 "prov": "VR",
 "img": "https://iltaccodibacco.it/img_eventi/2026/11/337337_20261120_164858.jpg",
 "id": "ea1a7acdf0"
+},
+{
+"title": "Concerto & Cena di San Valentino",
+"cat": "classica",
+"start": "2027-02-14",
+"url": "https://www.teatrolafenice.it/event/concerto-cena-di-san-valentino/",
+"src": "Teatro La Fenice",
+"time": "19:00",
+"venue": "Teatro La Fenice",
+"town": "Venezia",
+"prov": "VE",
+"img": "https://www.teatrolafenice.it/wp-content/uploads/2024/12/fenice-14-Febbraio-web-14-e1733396822586.jpeg",
+"id": "aee9ee99c2"
 },
 {
 "title": "Concerto diretto da Philippe Herreweghe",
