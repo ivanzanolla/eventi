@@ -5,6 +5,7 @@ on:
     - cron: "17 4 * * *"   # ogni giorno alle 05:17 (ora italiana d'inverno)
   workflow_dispatch: {}     # avvio manuale da Actions → "Run workflow"
   push:
+    branches: [main]   # sui branch di lavoro il bot non deve committare events.json
     paths: ["scraper/**", ".github/workflows/aggiorna-eventi.yml"]
 
 permissions:
