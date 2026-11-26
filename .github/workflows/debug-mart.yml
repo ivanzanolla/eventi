@@ -1,0 +1,15 @@
+name: Debug Mart
+on:
+  push:
+    paths: [".github/workflows/debug-mart.yml"]
+permissions:
+  contents: write
+jobs:
+  d:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: |
+          curl -sL -A "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 Chrome/131.0 Safari/537.36" -H "Accept-Language: it-IT,it;q=0.9" -o data/mart_debug.html -w "%{http_code} %{size_download}\n" https://www.mart.tn.it/mostre-eventi/mostre-ed-eventi-118152
+          git config user.name "github-actions[bot]"; git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/mart_debug.html; git commit -m "debug mart html"; git push
