@@ -147,6 +147,33 @@ def test_dedupe_merges_highlight():
     assert len(fe.dedupe([c, d])) == 1
 
 
+def test_fonte_in_errore_riusa_eventi_precedenti(tmp_path=None):
+    import tempfile
+    from datetime import timedelta
+    d = Path(tempfile.mkdtemp())
+    out = d / "events.json"
+    ref = fe.today()
+    fut = (ref + timedelta(days=10)).isoformat()
+    past = (ref - timedelta(days=10)).isoformat()
+    old = [{"title": "Viva", "start": past, "end": fut, "src": "Rotta", "cat": "mostre"},
+           {"title": "Finita", "start": past, "end": past, "src": "Rotta", "cat": "mostre"},
+           {"title": "Altra", "start": fut, "src": "Sana", "cat": "mostre"}]
+    out.write_text(json.dumps({"events": old}))
+    def rotta(http, r):
+        raise RuntimeError("giu")
+    def sana(http, r):
+        return [fe.Event(title="Nuova", cat=MOSTRE, start=fut, url="u", src="Sana")]
+    saved = fe.SOURCES
+    fe.SOURCES = [("Rotta", "x", rotta), ("Sana", "y", sana)]
+    try:
+        data = fe.run(out)
+    finally:
+        fe.SOURCES = saved
+    titles = [e["title"] for e in data["events"]]
+    assert titles == ["Viva", "Nuova"], titles  # niente 'Finita' (scaduta) né 'Altra' (fonte sana, non più presente)
+    assert data["sources"][0]["stale"] == 1
+
+
 if __name__ == "__main__":
     for name, fn in list(globals().items()):
         if name.startswith("test_"):
