@@ -1,17 +1,17 @@
 {
-"generated": "2026-11-27T14:55+01:00",
+"generated": "2026-11-28T09:34+01:00",
 "sources": [
 {
 "name": "Visit Dolomiti Bellunesi",
 "url": "https://www.visitdolomitibellunesi.com/it/eventi/calendario-eventi",
 "ok": true,
-"count": 35
+"count": 39
 },
 {
 "name": "Dolomiti Prealpi",
 "url": "https://www.dolomitiprealpi.it/eventi/",
 "ok": true,
-"count": 18
+"count": 17
 },
 {
 "name": "Veneto Segreto",
@@ -23,7 +23,7 @@
 "name": "il Tacco di Bacco",
 "url": "https://iltaccodibacco.it/veneto/",
 "ok": true,
-"count": 68
+"count": 71
 },
 {
 "name": "Teatro La Fenice",
@@ -40,9 +40,8 @@
 {
 "name": "Musei di Bassano",
 "url": "https://www.museibassano.it/it/mostre/in_corso",
-"ok": false,
-"count": 0,
-"error": "ConnectTimeout: HTTPSConnectionPool(host='www.museibassano.it', port=443): Max retries exceeded with url: /it/mostre/in_corso (Caused by ConnectTimeoutError(<HTTPSConnection(ho"
+"ok": true,
+"count": 3
 },
 {
 "name": "Turismo FVG",
@@ -177,6 +176,19 @@
 "id": "68bf1e4a4c"
 },
 {
+"title": "Oltre i ricettari. Dietetica, ittiologia, botanica e farmacopea tra XV e XVII secolo",
+"cat": "mostre",
+"start": "2026-10-30",
+"url": "https://www.museibassano.it/it/mostra/oltre-i-ricettari-dietetica-ittiologia-botanica-e-farmacopea-tra-xv-e-xvii-secolo",
+"src": "Musei di Bassano",
+"end": "2027-02-20",
+"venue": "Biblioteca Civica",
+"town": "Bassano del Grappa",
+"prov": "VI",
+"img": "https://www.museibassano.it/pixportfolio/museibassano_150_cover.jpg",
+"id": "8b4b215f2e"
+},
+{
 "title": "Tamaki Yoshida. Unfolding",
 "cat": "mostre",
 "start": "2026-10-31",
@@ -281,56 +293,12 @@
 "id": "f1aed46e50"
 },
 {
-"title": "Musica d'autunno – concerto degli studenti e dei docenti",
-"cat": "classica",
-"start": "2026-11-27",
-"url": "https://iltaccodibacco.it/veneto/eventi/336558.html",
-"src": "il Tacco di Bacco",
-"venue": "Auditorium Nuovo Montemezzi",
-"town": "Verona",
-"prov": "VR",
-"img": "https://iltaccodibacco.it/img_eventi/2026/11/336556_20261113_145158.jpg",
-"id": "723f35bbb1"
-},
-{
-"title": "Requiem per una donna",
-"cat": "classica",
-"start": "2026-11-27",
-"url": "https://www.turismofvg.it/eventi/requiem-per-una-donna-506452",
-"src": "Turismo FVG",
-"town": "Tavagnacco",
-"prov": "FVG",
-"id": "80310144b6"
-},
-{
-"title": "Riflessere 26/27 - Il coraggio dietro al velo",
-"cat": "mostre",
-"start": "2026-11-27",
-"url": "https://www.turismofvg.it/eventi/riflessere-26-27-il-coraggio-dietro-al-velo",
-"src": "Turismo FVG",
-"town": "Pordenone",
-"prov": "PN",
-"id": "ac8de52a51"
-},
-{
-"title": "“Note di rinascita della piccola Fenice”",
-"cat": "classica",
-"start": "2026-11-27",
-"url": "https://www.visitdolomitibellunesi.com/it/eventi/note-di-rinascita-della-piccola-fenice",
-"src": "Visit Dolomiti Bellunesi",
-"end": "2027-10-10",
-"venue": "Teatro della Sena",
-"town": "Feltre",
-"prov": "BL",
-"img": "https://www.visitdolomitibellunesi.com/imports/images/event/-note-di-rinascita-della-piccola-fenice-bf395d87-4444-4a03-9510-2949ee1e1aae/123137/image-thumb__123137__thumb500/images-trn-1-c758c69d-c7ea-49bd-915d-875adbe9206d-99-image.jpg",
-"id": "dc2211ac45"
-},
-{
 "title": "34^ Rassegna Corale Sot L’Ansul",
 "cat": "classica",
 "start": "2026-11-28",
 "url": "https://www.turismofvg.it/eventi/34-rassegna-corale-sot-l-ansul",
 "src": "Turismo FVG",
+"time": "20:45",
 "town": "Cordenons",
 "prov": "PN",
 "id": "0dcdba9a77"
@@ -537,18 +505,6 @@
 "id": "1c2b7f6312"
 },
 {
-"title": "Visita guidata al Palazzo dei Mutilati a Verona",
-"cat": "visite",
-"start": "2026-11-28",
-"url": "https://venetosegreto.com/evento/visita-guidata-al-palazzo-dei-mutilati-a-verona/",
-"src": "Veneto Segreto",
-"venue": "Ville venete",
-"prov": "VR",
-"img": "https://mio.venetosegreto.com/storage/events/thumbs/6645b11978e34d7cd726d6819d73ef48.webp",
-"price": "16€",
-"id": "9f68d3c0cc"
-},
-{
 "title": "Visita guidata al Teatro La Fenice",
 "cat": "visite",
 "start": "2026-11-28",
@@ -608,6 +564,16 @@
 "prov": "BL",
 "img": "https://www.visitdolomitibellunesi.com/imports/images/event/aperture-2026-e-visita-guidata-al-mulino-di-santa-libera-5d1f798f-093f-47a0-8f25-7d2ed547edc2/112771/image-thumb__112771__thumb500/images-trn-1-c5ff2492-ed5c-43bc-af6f-c1e92652a2ab-99-image.jpg",
 "id": "0ab58dcd2b"
+},
+{
+"title": "Concerto per violino e cembalo",
+"cat": "classica",
+"start": "2026-11-29",
+"url": "https://www.turismofvg.it/eventi/concerto-per-violino-e-cembalo",
+"src": "Turismo FVG",
+"town": "Udine",
+"prov": "UD",
+"id": "bfdadff036"
 },
 {
 "title": "Evaristo Cian - Di segni e di Temi",
@@ -714,6 +680,16 @@
 "id": "ae3fb4de04"
 },
 {
+"title": "Teatro Miela - Progetto Beethoven: in principio era l'azione",
+"cat": "classica",
+"start": "2026-11-29",
+"url": "https://www.turismofvg.it/eventi/teatro-miela-progetto-beethoven-in-principio-era-l-azione",
+"src": "Turismo FVG",
+"town": "Trieste",
+"prov": "TS",
+"id": "26be06658f"
+},
+{
 "title": "Verona sotterranea: viaggio nella città segreta",
 "cat": "visite",
 "start": "2026-11-29",
@@ -770,6 +746,7 @@
 "prov": "PD",
 "img": "https://mio.venetosegreto.com/storage/events/thumbs/81ca78afa23abfd23765d4a42426aaa3.webp",
 "price": "24€",
+"more": 2,
 "id": "9ab3e2d5d2"
 },
 {
@@ -982,6 +959,18 @@
 "img": "https://mio.venetosegreto.com/storage/events/thumbs/8b361b33c68459bc209689826cdcf396.webp",
 "price": "15€",
 "id": "4556ac75c0"
+},
+{
+"title": "Rising Stars: il violino di Sebastiano Menardi a Calalzo di Cadore",
+"cat": "classica",
+"start": "2026-12-05",
+"url": "https://www.visitdolomitibellunesi.com/it/eventi/rising-stars-il-violino-di-sebastiano-menardi-a-calalzo-di-cadore?day=2026-12-05",
+"src": "Visit Dolomiti Bellunesi",
+"venue": "Sala Consiliare Norma Cossetto",
+"town": "Calalzo di Cadore",
+"prov": "BL",
+"img": "https://www.visitdolomitibellunesi.com/imports/images/event/rising-stars-il-violino-di-sebastiano-menardi-a-calalzo-di-cadore-1e9fad5b-1158-4de9-a621-3571b010d9de/124286/image-thumb__124286__thumb500/images-trn-1-8409c049-80c1-4004-a472-fb6e3153c2a1-99-image.jpg",
+"id": "ebe04c1eb4"
 },
 {
 "title": "Sette Secoli di Bellezza: la Pinacoteca dell’Accademia dei Concordi",
@@ -1334,6 +1323,19 @@
 "img": "https://mio.venetosegreto.com/storage/events/thumbs/b9d58a099abcadbd1a29b77a75950768.webp",
 "price": "16€",
 "id": "72f6e2dbe5"
+},
+{
+"title": "Il Ritorno del \"Cavallo Colossale\" di Antonio Canova al Museo Civico di Bassano del Grappa",
+"cat": "mostre",
+"start": "2026-12-12",
+"url": "https://www.museibassano.it/it/mostra/il-ritorno-del-cavallo-colossale-di-antonio-canova-al-museo-civico-di-bassano-del-grappa",
+"src": "Musei di Bassano",
+"end": "2027-03-12",
+"venue": "Museo Civico di Bassano del Grappa",
+"town": "Bassano del Grappa",
+"prov": "VI",
+"img": "https://www.museibassano.it/pixportfolio/1791874058_1496acdd40a276dd_cover.jpg",
+"id": "e87873c226"
 },
 {
 "title": "SECRET TOUR®: La Rotonda di Palladio",
@@ -1811,11 +1813,14 @@
 "title": "“Note di rinascita della piccola Fenice”",
 "cat": "classica",
 "start": "2026-12-22",
-"url": "https://www.dolomitiprealpi.it/event/note-di-rinascita-della-piccola-fenice-3/",
-"src": "Dolomiti Prealpi",
+"url": "https://www.visitdolomitibellunesi.com/it/eventi/note-di-rinascita-della-piccola-fenice?day=2026-12-22",
+"src": "Visit Dolomiti Bellunesi",
+"venue": "Teatro della Sena",
 "town": "Feltre",
 "prov": "BL",
-"id": "44b18f6aa3"
+"img": "https://www.visitdolomitibellunesi.com/imports/images/event/-note-di-rinascita-della-piccola-fenice-bf395d87-4444-4a03-9510-2949ee1e1aae/123137/image-thumb__123137__thumb500/images-trn-1-c758c69d-c7ea-49bd-915d-875adbe9206d-99-image.jpg",
+"more": 3,
+"id": "d160e01c7b"
 },
 {
 "title": "Dicembre al museo",
@@ -1982,11 +1987,13 @@
 "title": "“Note di rinascita della piccola Fenice”",
 "cat": "classica",
 "start": "2027-01-01",
-"url": "https://www.dolomitiprealpi.it/event/note-di-rinascita-della-piccola-fenice-4/",
-"src": "Dolomiti Prealpi",
+"url": "https://www.visitdolomitibellunesi.com/it/eventi/note-di-rinascita-della-piccola-fenice?day=2027-01-01",
+"src": "Visit Dolomiti Bellunesi",
+"venue": "Teatro della Sena",
 "town": "Feltre",
 "prov": "BL",
-"id": "50c3ead26d"
+"img": "https://www.visitdolomitibellunesi.com/imports/images/event/-note-di-rinascita-della-piccola-fenice-bf395d87-4444-4a03-9510-2949ee1e1aae/123137/image-thumb__123137__thumb500/images-trn-1-c758c69d-c7ea-49bd-915d-875adbe9206d-99-image.jpg",
+"id": "58f461b002"
 },
 {
 "title": "Concerto di Capodanno 2027",
@@ -2182,6 +2189,18 @@
 "id": "b620ca2719"
 },
 {
+"title": "Visita guidata al Palazzo dei Mutilati a Verona",
+"cat": "visite",
+"start": "2027-01-30",
+"url": "https://venetosegreto.com/evento/visita-guidata-al-palazzo-dei-mutilati-a-verona/",
+"src": "Veneto Segreto",
+"venue": "Ville venete",
+"prov": "VR",
+"img": "https://mio.venetosegreto.com/storage/events/thumbs/8037482db2797016f6e0919e1c80c3f3.webp",
+"price": "16€",
+"id": "7bcc565937"
+},
+{
 "title": "Madama Butterfly",
 "cat": "classica",
 "start": "2027-01-30",
@@ -2365,11 +2384,13 @@
 "title": "“Note di rinascita della piccola Fenice”",
 "cat": "classica",
 "start": "2027-02-15",
-"url": "https://www.dolomitiprealpi.it/event/note-di-rinascita-della-piccola-fenice-5/",
-"src": "Dolomiti Prealpi",
+"url": "https://www.visitdolomitibellunesi.com/it/eventi/note-di-rinascita-della-piccola-fenice?day=2027-02-15",
+"src": "Visit Dolomiti Bellunesi",
+"venue": "Teatro della Sena",
 "town": "Feltre",
 "prov": "BL",
-"id": "84da270a1c"
+"img": "https://www.visitdolomitibellunesi.com/imports/images/event/-note-di-rinascita-della-piccola-fenice-bf395d87-4444-4a03-9510-2949ee1e1aae/123137/image-thumb__123137__thumb500/images-trn-1-c758c69d-c7ea-49bd-915d-875adbe9206d-99-image.jpg",
+"id": "76ce1893e5"
 },
 {
 "title": "Hänsel und Gretel",
