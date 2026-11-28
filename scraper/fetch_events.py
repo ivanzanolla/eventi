@@ -94,13 +94,27 @@ def infer_year(day: int, month: int, ref: date) -> date:
     return d
 
 
+RETRIES = 3
+
+
 class Http:
     def __init__(self):
         self.s = requests.Session()
         self.s.headers.update({"User-Agent": UA, "Accept-Language": "it-IT,it;q=0.9"})
 
     def get(self, url, **kw):
-        r = self.s.get(url, timeout=30, **kw)
+        # Retry con backoff su errori di rete/5xx: alcuni siti (es. museibassano.it)
+        # a tratti non rispondono ai runner GitHub (ConnectTimeout).
+        for attempt in range(RETRIES):
+            try:
+                r = self.s.get(url, timeout=(10, 30), **kw)
+                if r.status_code >= 500 and attempt < RETRIES - 1:
+                    raise requests.HTTPError(f"{r.status_code}", response=r)
+                break
+            except (requests.ConnectionError, requests.Timeout, requests.HTTPError):
+                if attempt == RETRIES - 1:
+                    raise
+                time.sleep(3 * 3 ** attempt)
         r.raise_for_status()
         time.sleep(PAUSE)
         return r
@@ -597,11 +611,28 @@ def run(out_path: Path) -> dict:
     limit = (ref + timedelta(days=HORIZON_DAYS)).isoformat()
     events = [e.finalize() for e in dedupe(all_events) if e.cat and e.start <= limit]
     events.sort(key=lambda e: (e.start, e.time or "99", e.title))
+    events_json = [{k: v for k, v in asdict(e).items() if v not in (None, "", 0, False)} for e in events]
+
+    # Fonte in errore: riusa gli eventi dell'ultimo file ancora non finiti, così un
+    # guasto temporaneo del sito non li fa sparire dal calendario.
+    failed = {s["name"]: s for s in status if not s["ok"]}
+    if failed and out_path.exists():
+        try:
+            old = json.loads(out_path.read_text(encoding="utf-8")).get("events", [])
+        except (ValueError, OSError):
+            old = []
+        today_iso = ref.isoformat()
+        for e in old:
+            s = failed.get(e.get("src"))
+            if s and (e.get("end") or e["start"]) >= today_iso:
+                events_json.append(e)
+                s["stale"] = s.get("stale", 0) + 1
+        events_json.sort(key=lambda e: (e["start"], e.get("time") or "99", e["title"]))
     data = {
         "generated": datetime.now(TZ).isoformat(timespec="minutes"),
         "sources": status,
         "links": [{"name": n, "url": u} for n, u in LINKS],
-        "events": [{k: v for k, v in asdict(e).items() if v not in (None, "", 0, False)} for e in events],
+        "events": events_json,
     }
     # Se TUTTE le fonti falliscono, non sovrascrivere i dati buoni del giorno prima
     if not any(s["ok"] for s in status) and out_path.exists():
@@ -609,7 +640,7 @@ def run(out_path: Path) -> dict:
         return data
     out_path.parent.mkdir(parents=True, exist_ok=True)
     out_path.write_text(json.dumps(data, ensure_ascii=False, indent=0), encoding="utf-8")
-    print(f"Scritti {len(events)} eventi in {out_path}", file=sys.stderr)
+    print(f"Scritti {len(events_json)} eventi in {out_path}", file=sys.stderr)
     return data
 
 
