@@ -1,5 +1,5 @@
 {
-"generated": "2026-11-28T09:34+01:00",
+"generated": "2026-11-28T14:02+01:00",
 "sources": [
 {
 "name": "Visit Dolomiti Bellunesi",
@@ -23,7 +23,7 @@
 "name": "il Tacco di Bacco",
 "url": "https://iltaccodibacco.it/veneto/",
 "ok": true,
-"count": 71
+"count": 76
 },
 {
 "name": "Teatro La Fenice",
@@ -611,19 +611,6 @@
 "id": "824ede77dd"
 },
 {
-"title": "Il castello di Valbona in un'atmosfera medievale",
-"cat": "visite",
-"start": "2026-11-29",
-"url": "https://venetosegreto.com/evento/il-castello-di-valbona-in-un-atmosfera-medievale/",
-"src": "Veneto Segreto",
-"venue": "Castelli",
-"prov": "PD",
-"img": "https://mio.venetosegreto.com/storage/events/thumbs/fa04e8b6627bb223cf9067a7c2443bb6.webp",
-"price": "16€",
-"more": 1,
-"id": "d468927b8c"
-},
-{
 "title": "Il magico castello di Zumelle in Valbelluna - speciale Natale",
 "cat": "visite",
 "start": "2026-11-29",
@@ -1106,6 +1093,18 @@
 "id": "6fbc82e471"
 },
 {
+"title": "Il castello di Valbona in un'atmosfera medievale",
+"cat": "visite",
+"start": "2026-12-06",
+"url": "https://venetosegreto.com/evento/il-castello-di-valbona-in-un-atmosfera-medievale/",
+"src": "Veneto Segreto",
+"venue": "Castelli",
+"prov": "PD",
+"img": "https://mio.venetosegreto.com/storage/events/thumbs/0f1eac7e81e80f69baf9a1f788b9bfcb.webp",
+"price": "16€",
+"id": "6c33871233"
+},
+{
 "title": "Natale a Villa Ca’ Conti: visita guidata, spettacolo e mercatini di Natale (PD)",
 "cat": "visite",
 "start": "2026-12-06",
@@ -1336,6 +1335,19 @@
 "prov": "VI",
 "img": "https://www.museibassano.it/pixportfolio/1791874058_1496acdd40a276dd_cover.jpg",
 "id": "e87873c226"
+},
+{
+"title": "NATALY MAIER. L'immagine possibile",
+"cat": "mostre",
+"start": "2026-12-12",
+"url": "https://iltaccodibacco.it/veneto/eventi/338644.html",
+"src": "il Tacco di Bacco",
+"end": "2027-02-13",
+"venue": "Oltrearte Galleria Contemporanea",
+"town": "Conegliano",
+"prov": "TV",
+"img": "https://iltaccodibacco.it/img_eventi/2026/12/338644_20261128_113217.jpg",
+"id": "9c6e29b0e4"
 },
 {
 "title": "SECRET TOUR®: La Rotonda di Palladio",
